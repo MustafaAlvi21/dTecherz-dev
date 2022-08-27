@@ -40,11 +40,3 @@
 //     console.log(true);
 
 // } 
-    
-    // 0 < 2 = true
-for (i=0; i < 2; i++) {
-    console.log(i);    
-    i-=2
-    console.log(i);    
-}
-

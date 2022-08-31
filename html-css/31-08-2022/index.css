@@ -1,9 +1,0 @@
-.p {
-    border: 2px saddlebrown solid;
-    display: flex;
-    flex-direction: column;
-}
-
-.p:nth-child(2) {
-   background-color: black;
-}

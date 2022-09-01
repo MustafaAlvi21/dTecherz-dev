@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="p">
-        <!-- <h1>Parent</h1> -->
-        <div>
-            <h1>Child #1</h1>
-        </div>
-        <div>
-            <h1>Child #2</h1>
-        </div>
-        <div>
-            <h1>Child #3</h1>
-        </div>
-        <div>
-            <h1>Child #4</h1>
-        </div>
-    </div>
+    <input type="text" id="email" onkeyup="check()">
+    <input type="text" id="pass" style="display: none;" onkeyup="passLength()">
+</div>
+
+<script>
+    function check() {
+        const a1 = document.getElementById("email").value;
+        console.log(a1);
+        
+        document.getElementById("pass").style.display = "block";
+    }
+    
+    function passLength() {
+        const p1 = document.getElementById("pass").value.length;
+        console.log(p1);
+        if (p1 < 6) {
+            console.log("Password is weak");
+
+        } else if (p1 > 7) {
+            console.log("Password is strong");
+            
+        } else {
+            console.log("Password is good");
+
+        }
+    }
+
+</script>
 </body>
 </html>

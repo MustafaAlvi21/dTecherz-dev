@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form onsubmit="asd(event)">
+        <h1>Sign Up From</h1>
+        <div>
+            <input type="email" id="email" placeholder="enter email" required>
+            <button id="continue" onclick="showPass(event)">Continue</button>
+        </div>
+        <div>
+            <input type="password" id="password" onkeyup="validatePass()" placeholder="enter password" style="display: none;">
+        </div>
+        <div>
+            <p id="msg"></p>
+        </div>
+    </form>
+
+    <script>
+        function asd(event){
+            event.preventDefault()
+        }
+
+        function showPass() {
+            document.getElementById("password").style.display = "block";
+        }
+        
+        function validatePass() {
+            var pass = document.getElementById("password").value;
+            console.log(pass);
+            if (pass.length == 0 ) {
+                document.getElementById("msg").innerText = "";
+            
+            } else if (pass.length <= 5 ) {
+                document.getElementById("msg").innerText = "Password is weak";
+                
+            } else if (pass.length >= 8) {
+                document.getElementById("msg").innerText = "Password is strong";
+                
+            } else {
+                document.getElementById("msg").innerText = "Password is good";
+                
+            }
+        }
+
+        // users = [
+        //     {
+        //         email: "mustafaalvi21@gmail.com",
+        //         pass: "123456"
+        //     },{
+        //         email: "test@gmail.com",
+        //         pass: "asd123"
+        //     }
+        // ]
+        
+        // storage say data get kerne k lay
+        // data = localStorage.getItem("cart")   
+        // console.log( JSON.parse(data) );
+
+        // // storage main data save kerne k lay
+        // localStorage.setItem("name", "Mustafa")
+        
+        // storage main say single data delete kerne k lay
+        // localStorage.removeItem("name")
+        
+        // // storage main say all data delete kerne k lay
+        // localStorage.clear()
+
+        // Task
+        // Step 1: Users ka JSON page load hone pay localStorage main save
+        // Step 2: Jb aap k email enter kerne k baad continue button click kerro gay to localStorage say validate hoga email 
+        // k pehle say registered hay ya nahi agr registered hay to msg aajai k "Email is already registered."
+        // Step 3: Email validate kerne k baad password ki length valdate hogi or phir localStorage main users k data main
+        // aapka new user add hojai ga or msg print hoga "User registered successfully."
+        // Step 4: login ka page banao gay or us main email or password type kerro gay
+        // Step 5: jb login k button pay click kerro gay to email and password both localStorage say validate kerro gay or dono k sahi hone pay 
+        // msg print hoga "User login successfully."
+
+    </script>
+</body>
+
+</html>

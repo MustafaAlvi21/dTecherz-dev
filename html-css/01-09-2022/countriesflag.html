@@ -1,0 +1,7038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* These only for the Codepen */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    body {
+        width: 100%;
+        background-color: rgb(221, 239, 255);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+        font-family: cursive;
+        font-weight: 600;
+        padding-bottom: 300px;
+    }
+
+    @media screen and (max-width: 2040px) {
+        body {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 1632px) {
+        body {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 1224px) {
+        body {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 816px) {
+        body {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .container {
+        padding: 50px 0;
+        height: fit-content;
+        position: relative;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 0 0 4px black;
+    }
+
+    /* Country's Name  */
+    .container::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: attr(data-name);
+        padding: 10px;
+        border-collapse: collapse;
+    }
+
+    /* Main Code Starts form Here */
+
+    .flag {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    }
+
+    /* #1 */
+    /* ==================================================== */
+    /* =========== Style for Afghanistan's Flag =========== */
+    /* ==================================================== */
+
+    .afghanistan {
+        background: linear-gradient(to right,
+                black 33%,
+                #be0000 33%,
+                #be0000 66%,
+                #009900 0);
+    }
+
+    .afghanistan__logo {
+        position: absolute;
+        inset: 0;
+        width: 170px;
+        margin: auto;
+    }
+
+    /* #2 */
+    /* ==================================================== */
+    /* ===========Style for Albania's Flag ============ */
+    /* ==================================================== */
+
+    .albania {
+        background-color: #da2b26;
+    }
+
+    .albania__logo {
+        position: absolute;
+        inset: 0;
+        width: 140px;
+        margin: auto;
+    }
+
+    /* #3 */
+    /* ==================================================== */
+    /* ===========Style for Algeria's Flag ================ */
+    /* ==================================================== */
+
+    .algeria {
+        background: linear-gradient(to right, #00a652 50%, #fff 0);
+    }
+
+    .algeria__moon {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        transform: rotate(40deg) translate(8px, -8px);
+        height: 80px;
+        width: 80px;
+        box-shadow: -8px 8px 0 8px #ed1b24;
+        border-radius: 50%;
+    }
+
+    .algeria__star {
+        position: absolute;
+        margin: auto;
+        inset: 0;
+        transform: rotate(20deg) translate(20px, -10px);
+        width: 50px;
+        height: 50px;
+        background-color: #ed1b24;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .algeria__logo {
+        position: absolute;
+        inset: 0;
+        width: 140px;
+        margin: auto;
+    }
+
+    /* #4 */
+    /* ==================================================== */
+    /* =========== Style for Andorra's Flag =============== */
+    /* ==================================================== */
+
+    .andorra {
+        background: linear-gradient(to right,
+                #3f2e8e 33%,
+                #f8e211 33%,
+                #f8e211 66%,
+                #db1f40 0);
+    }
+
+    .andorra__logo {
+        position: absolute;
+        inset: 0;
+        width: 90px;
+        margin: auto;
+    }
+
+    /* #5 */
+    /* ==================================================== */
+    /* =========== Style for Angola's Flag =============== */
+    /* ==================================================== */
+
+    .angola {
+        background: linear-gradient(#be0026 50%, #000 0);
+    }
+
+    .angola__logo {
+        position: absolute;
+        inset: 0;
+        width: 150px;
+        margin: auto;
+    }
+
+    /* #6 */
+    /* ==================================================== */
+    /* ======= Style for Antigua & Bermuda's Flag ========= */
+    /* ==================================================== */
+
+    .antigua {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .antigua__black {
+        flex: 2;
+
+        background-color: black;
+    }
+
+    .antigua__blue {
+        flex: 1;
+        z-index: 1;
+        background-color: #36a7e9;
+    }
+
+    .antigua__white {
+        flex: 2;
+        background-color: white;
+    }
+
+    .antigua__triangle {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #be0026;
+        transform: rotate(-127deg) translate(50px, -160px);
+        z-index: 2;
+    }
+
+    .antigua>.right {
+        transform: rotate(127deg) translate(-50px, -160px);
+    }
+
+    .antigua__logo {
+        position: absolute;
+        inset: 0;
+        width: 150px;
+        margin: 5px auto;
+    }
+
+    /* #7 */
+    /* ==================================================== */
+    /* =========== Style for Argentina's Flag ============= */
+    /* ==================================================== */
+
+    .argentina {
+        background: linear-gradient(#8ad3f4 33%, #fff 33%, #fff 66%, #8ad3f4 0);
+    }
+
+    .argentina__logo {
+        position: absolute;
+        inset: 0;
+        width: 55px;
+        margin: auto;
+    }
+
+    /* #8 */
+    /* ==================================================== */
+    /* =========== Style for Armenia's Flag ==========-=== */
+    /* ==================================================== */
+
+    .armenia {
+        background: linear-gradient(#be0026 33%, #3c5aa3 33%, #3c5aa3 66%, #e2ae58 0);
+    }
+
+    /* #9 */
+    /* ==================================================== */
+    /* =========== Style for Australia's Flag ==========-=== */
+    /* ==================================================== */
+
+    .australia {
+        background-color: #001b6a;
+    }
+
+    .australia__left__top {
+        width: 50%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .australia__plus {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 7px white) drop-shadow(7px 0 white) drop-shadow(-7px 0 white) drop-shadow(0 -7px white);
+    }
+
+    .australia__plus .plus {
+        width: 100%;
+        height: 100%;
+        background-color: #e51837;
+        clip-path: polygon(0% 40%,
+                43% 40%,
+                43% 0%,
+                58% 0%,
+                58% 40%,
+                100% 40%,
+                100% 60%,
+                58% 60%,
+                58% 100%,
+                43% 100%,
+                43% 60%,
+                0% 60%);
+    }
+
+    .australia__x {
+        position: absolute;
+        inset: 0;
+    }
+
+    .australia__x>.x__strip-1,
+    .australia__x>.x__strip-2 {
+        position: relative;
+        background-color: white;
+        width: 150%;
+        height: 20px;
+        transform: rotate(-35deg) scale(1.3) translate(-13px, 5px);
+    }
+
+    .australia__x>.x__strip-2 {
+        transform: rotate(35deg) scale(1.3) translate(13px, 30px);
+    }
+
+    .australia__x>.x__strip-1::before,
+    .australia__x>.x__strip-1::after,
+    .australia__x>.x__strip-2::before,
+    .australia__x>.x__strip-2::after {
+        position: absolute;
+        background-color: #e51837;
+        content: "";
+        width: 35%;
+        height: 7px;
+    }
+
+    .australia__x>.x__strip-1::before,
+    .australia__x>.x__strip-2::before {
+        top: 10px;
+    }
+
+    .australia__x>.x__strip-1::after,
+    .australia__x>.x__strip-2::after {
+        bottom: 10px;
+        left: 35%;
+    }
+
+    .australia>img {
+        position: absolute;
+        left: 62px;
+        top: 40px;
+    }
+
+    /* #10 */
+    /* ==================================================== */
+    /* =========== Style for Austria's Flag ==========-=== */
+    /* ==================================================== */
+
+    .austria {
+        background: linear-gradient(#d72427 33%, #fff 33%, #fff 66%, #d72427 0);
+    }
+
+    /* #11 */
+    /* ==================================================== */
+    /* =========== Style for Azerbaijan's Flag ============ */
+    /* ==================================================== */
+
+    .azerbaijan {
+        background: linear-gradient(#01aef0 33%, #ef3341 33%, #ef3341 66%, #00a650 0);
+    }
+
+    .azerbaijan__logo {
+        position: absolute;
+        inset: 0;
+        width: 55px;
+        margin: auto;
+    }
+
+    /* #12 */
+    /* ==================================================== */
+    /* =========== Style for Bahamas's Flag ============ */
+    /* ==================================================== */
+
+    .bahamas {
+        background: linear-gradient(#01aef0 33%, #fef200 33%, #fef200 66%, #01aef0 0);
+    }
+
+    .bahamas__triangle {
+        position: absolute;
+        border: 100px solid transparent;
+        border-left-color: #231f20;
+    }
+
+    /* #13 */
+    /* ==================================================== */
+    /* =========== Style for Bahrain's Flag =============== */
+    /* ==================================================== */
+
+    .bahrain {
+        background-color: #ed1b24;
+    }
+
+    .bahrain__triangle {
+        position: absolute;
+        top: -33px;
+        left: -10px;
+        background-color: rgb(255 255 255);
+        width: 110px;
+        height: 110px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        transform: rotate(-270deg);
+    }
+
+    .bahrain__triangle:nth-child(2) {
+        top: 7px;
+    }
+
+    .bahrain__triangle:nth-child(3) {
+        top: 47px;
+    }
+
+    .bahrain__triangle:nth-child(4) {
+        top: 87px;
+    }
+
+    .bahrain__triangle:nth-child(5) {
+        top: 127px;
+    }
+
+    /* #14 */
+    /* ==================================================== */
+    /* =========== Style for Bangladesh's Flag =============== */
+    /* ==================================================== */
+
+    .bangladesh {
+        background-color: #006a4c;
+        display: grid;
+        place-items: center;
+    }
+
+    .bangladesh__circle {
+        position: absolute;
+        left: 25%;
+        width: 125px;
+        height: 125px;
+        border-radius: 1in;
+        background-color: #f4253f;
+    }
+
+    /* #15 */
+    /* ==================================================== */
+    /* =========== Style for Barbados's Flag ============== */
+    /* ==================================================== */
+
+    .barbados {
+        background: linear-gradient(to right,
+                #002180 33%,
+                #fec820 33%,
+                #fec820 67%,
+                #002180 0);
+    }
+
+    .barbados__logo {
+        position: absolute;
+        inset: 0;
+        width: 80px;
+        margin: auto;
+    }
+
+    /* #16 */
+    /* ==================================================== */
+    /* =========== Style for Barbados's Flag ============== */
+    /* ==================================================== */
+
+    .belarus {
+        display: flex;
+        background: linear-gradient(to right, #cf0f1a 67%, #007d2c 0);
+    }
+
+    .belarus__logo {
+        position: absolute;
+        height: 100%;
+        left: 2px;
+    }
+
+    /* #17 */
+    /* ==================================================== */
+    /* =========== Style for Belgium's Flag ============== */
+    /* ==================================================== */
+
+    .belgium {
+        background: linear-gradient(to right,
+                black 33%,
+                #fddb21 33%,
+                #fddb21 67%,
+                #ef303f 0);
+    }
+
+    /* #18 */
+    /* ==================================================== */
+    /* =========== Style for Belize's Flag =============== */
+    /* ==================================================== */
+
+    .belize {
+        background-color: #da0612;
+    }
+
+    .belize__blue {
+        position: absolute;
+        background-color: #100e96;
+        height: 80%;
+        width: 100%;
+        top: 20px;
+    }
+
+    .belize__logo {
+        position: absolute;
+        inset: 0;
+        width: 120px;
+        margin: auto;
+    }
+
+    /* #19 */
+    /* ==================================================== */
+    /* =========== Style for Benin's Flag =============== */
+    /* ==================================================== */
+
+    .benin {
+        background: linear-gradient(#fcd20e 50%, #e90a29 0);
+    }
+
+    .benin::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 40%;
+        background-color: #018850;
+    }
+
+    /* #20 */
+    /* ==================================================== */
+    /* =========== Style for Bhutan's Flag =============== */
+    /* ==================================================== */
+
+    .bhutan {
+        background: linear-gradient(-34deg, #ff4e0a 50%, #ffd61a 0);
+    }
+
+    .bhutan__logo {
+        position: absolute;
+        inset: 0;
+        width: 230px;
+        margin: auto;
+    }
+
+    /* #21 */
+    /* ==================================================== */
+    /* =========== Style for Bolivia's Flag =============== */
+    /* ==================================================== */
+
+    .bolivia {
+        background: linear-gradient(#d72718 33%, #f9e400 33%, #f9e400 66%, #007a31 0);
+    }
+
+    .bolivia__logo {
+        position: absolute;
+        inset: 0;
+        width: 65px;
+        margin: auto;
+    }
+
+    /* #22 */
+    /* ==================================================== */
+    /* ==== Style for Bosnia and Herzegovina's Flag ======= */
+    /* ==================================================== */
+
+    .bosnia {
+        background-color: #001e96;
+    }
+
+    .bosnia__triangle {
+        position: absolute;
+        top: -72%;
+        left: 35%;
+        border: 142px solid transparent;
+        border-left-color: #ffcc01;
+        transform: rotate(-45deg);
+    }
+
+    .bosnia__star__wrapper {
+        filter: drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff) drop-shadow(25px 25px #fff);
+    }
+
+    .bosnia__star__wrapper>.star {
+        width: 35px;
+        height: 35px;
+        margin: -20px 0px;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #23 */
+    /* ==================================================== */
+    /* =========== Style for Botswana's Flag ============== */
+    /* ==================================================== */
+
+    .botswana {
+        background-color: #6dabd2;
+        display: grid;
+        place-items: center;
+    }
+
+    .botswana::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 40px;
+        background-color: black;
+        border-width: 10px 0 10px 0;
+        border-color: white;
+        border-style: solid;
+    }
+
+    /* #24 */
+    /* ==================================================== */
+    /* =========== Style for Brazil's Flag ============== */
+    /* ==================================================== */
+
+    .brazil {
+        background-color: #009c37;
+        display: grid;
+        place-items: center;
+    }
+
+    .brazil__diamond {
+        background-color: #fde000;
+        width: 80%;
+        height: 70%;
+        clip-path: polygon(51% 0%, 100% 50%, 51% 100%, 0% 50%);
+        /* transform: skew(-10deg, -10deg) rotate(45deg); */
+    }
+
+    .brazil__logo {
+        position: absolute;
+        inset: 0;
+        width: 80px;
+        margin: auto;
+    }
+
+    /* #25 */
+    /* ==================================================== */
+    /* =========== Style for Brunei's Flag ============== */
+    /* ==================================================== */
+
+    .brunei {
+        background-color: #f7e017;
+    }
+
+    .brunei__black {
+        width: 100%;
+        height: 25%;
+        transform: rotate(15deg) scaleX(1.5) translate(10px, 50px);
+        background-color: white;
+        box-shadow: 0 50px black;
+    }
+
+    .brunei__logo {
+        position: absolute;
+        inset: 0;
+        height: 150px;
+        margin: auto;
+    }
+
+    /* #26 */
+    /* ==================================================== */
+    /* =========== Style for Bulgaria's Flag ============== */
+    /* ==================================================== */
+
+    .bulgaria {
+        background: linear-gradient(#fff 33%, #00956e 33%, #00956e 66%, #d52612 0);
+    }
+
+    /* #27 */
+    /* ==================================================== */
+    /* ======== Style for Burkina Faso's Flag ============= */
+    /* ==================================================== */
+
+    .burkina {
+        background: linear-gradient(#ee2c30 50%, #13a04a 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .burkina__star {
+        width: 100px;
+        height: 100px;
+        background-color: #fad215;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #28 */
+    /* ==================================================== */
+    /* ======== Style for Burundi's Flag ============= */
+    /* ==================================================== */
+
+    .burundi__border {
+        border-color: transparent;
+        height: 100%;
+        border-width: 100px 150px 100px 150px;
+        border-color: #ce1126 #1eb53a #ce1126 #1eb53a;
+        border-style: solid;
+    }
+
+    .burundi__border::before,
+    .burundi__border::after {
+        position: absolute;
+        content: "";
+        background-color: white;
+        height: 20px;
+        width: 100%;
+        left: 20px;
+        transform: scalex(2) rotate(56deg);
+    }
+
+    .burundi__border::after {
+        margin-top: -12px;
+        transform: scalex(-2) rotate(53deg);
+    }
+
+    .burundi__logo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 100px;
+    }
+
+    /* #29 */
+    /* ==================================================== */
+    /* ======== Style for Cambodia's Flag ============= */
+    /* ==================================================== */
+
+    .cambodia {
+        background: linear-gradient(#243d94 25%, #de1f28 25%, #de1f28 75%, #243d94 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #30 */
+    /* ==================================================== */
+    /* ========== Style for Cameroon's Flag =============== */
+    /* ==================================================== */
+
+    .cameroon {
+        background: linear-gradient(to right,
+                #0b7b5f 33%,
+                #d02129 33%,
+                #d02129 66%,
+                #fad215 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .cameroon__star {
+        width: 90px;
+        height: 90px;
+        background-color: #fad215;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #31 */
+    /* ==================================================== */
+    /* =========== Style for Canada's Flag ================ */
+    /* ==================================================== */
+
+    .canada {
+        background: linear-gradient(to right,
+                #ec2224 30%,
+                #fff 30%,
+                #fff 70%,
+                #ec2224 0);
+    }
+
+    .canada__logo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 100px;
+    }
+
+    /* #32 */
+    /* ==================================================== */
+    /* =========== Style for Cape Verde's Flag ============ */
+    /* ==================================================== */
+
+    .cape_verde {
+        background-color: #22408b;
+    }
+
+    .cape_verde::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 30px;
+        bottom: 30px;
+        background-color: #ce2029;
+        border-color: white;
+        border-style: solid;
+        border-width: 30px 0;
+    }
+
+    .cape_verde__logo {
+        position: absolute;
+        width: 135px;
+        bottom: 10px;
+        left: 30px;
+    }
+
+    /* #33 */
+    /* ==================================================== */
+    /* ======= Style for Central African's Flag ============ */
+    /* ==================================================== */
+
+    .central_african {
+        background: linear-gradient(#253a7d 25%,
+                #fff 25%,
+                #fff 50%,
+                #2a9747 50%,
+                #2a9747 75%,
+                #fdcd0a 0);
+    }
+
+    .central_african::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 100%;
+        background-color: #d31f35;
+    }
+
+    .central_african::after {
+        content: "";
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        margin: 5px 25px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        background-color: #fdcd0a;
+    }
+
+    /* #34 */
+    /* ==================================================== */
+    /* ============== Style for Chad's Flag =============== */
+    /* ==================================================== */
+
+    .chad {
+        background: linear-gradient(to right,
+                #1f2e61 33%,
+                #fdcd0a 33%,
+                #fdcd0a 66%,
+                #c52032 0);
+    }
+
+    /* #35 */
+    /* ==================================================== */
+    /* ============== Style for Chile's Flag ============== */
+    /* ==================================================== */
+
+    .chile {
+        background: linear-gradient(#fff 50%, #e51717 0);
+    }
+
+    .chile::before {
+        position: absolute;
+        content: "";
+        width: 40%;
+        height: 50%;
+        background-color: #1f2e61;
+    }
+
+    .chile::after {
+        position: absolute;
+        content: "";
+        height: 70px;
+        width: 70px;
+        margin: 15px 25px;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #36 */
+    /* ==================================================== */
+    /* ============== Style for China's Flag ============== */
+    /* ==================================================== */
+
+    .china {
+        background: #dd2d26;
+    }
+
+    .china__star,
+    .china__small_star {
+        position: absolute;
+        margin: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #fddd00;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .china__small_star {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+
+    .china__small_star:nth-child(2) {
+        left: 82px;
+        top: 10px;
+        transform: rotate(30deg);
+    }
+
+    .china__small_star:nth-child(3) {
+        left: 100px;
+        top: 27px;
+        transform: rotate(45deg);
+    }
+
+    .china__small_star:nth-child(4) {
+        left: 102px;
+        top: 55px;
+    }
+
+    .china__small_star:nth-child(5) {
+        left: 82px;
+        top: 75px;
+        transform: rotate(30deg);
+    }
+
+    /* #37 */
+    /* ==================================================== */
+    /* ============= Style for Colombia's Flag ============ */
+    /* ==================================================== */
+
+    .colombia {
+        background: linear-gradient(#fad116 50%, #22408b 50%, #22408b 75%, #d60b1f 0);
+    }
+
+    /* #38 */
+    /* ==================================================== */
+    /* ============= Style for Comorosa's Flag ============ */
+    /* ==================================================== */
+
+    .comorosa {
+        background: linear-gradient(#ffc621 25%,
+                #fff 25%,
+                #fff 50%,
+                #ce2029 50%,
+                #ce2029 75%,
+                #4175b9 0);
+    }
+
+    .comorosa__triangle {
+        border-style: solid;
+        border-width: 100px 142px;
+        border-color: transparent;
+        border-left-color: #3f8e43;
+    }
+
+    .comorosa__moon {
+        border-radius: 1in;
+        background-color: transparent;
+        position: absolute;
+        left: 13%;
+        right: 62%;
+        top: 32%;
+        bottom: 32%;
+        box-shadow: -15px 0 white;
+        display: grid;
+        place-items: center;
+    }
+
+    .comorosa__star {
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        margin-left: -15px !important;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #39 */
+    /* ==================================================== */
+    /* == Style for Democratic Republic of the Congo's Flag == */
+    /* ==================================================== */
+
+    .democratic_republic_of_the_congo {
+        background-color: #007fff;
+    }
+
+    .democratic_republic_of_the_congo::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        background-color: #ce1021;
+        transform: scaleX(1.5) rotate(-40deg) translate(-50px, 50px);
+        border: 10px solid #f7d618;
+    }
+
+    .democratic_republic_of_the_congo::after {
+        content: "";
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        margin: 15px;
+        background-color: #f7d618;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #40 */
+    /* ==================================================== */
+    /* ===== Style for Republic of the Congo's Flag ======= */
+    /* ==================================================== */
+
+    .republic_of_the_congo {
+        background: linear-gradient(135deg,
+                #189352 40%,
+                #ffee08 40%,
+                #ffee08 60%,
+                #dd1818 0);
+    }
+
+    /* #41 */
+    /* ==================================================== */
+    /* ============= Style for Costa Rica's Flag ========= */
+    /* ==================================================== */
+
+    .costa_rica {
+        background: linear-gradient(#002b7f 16%,
+                #fff 16%,
+                #fff 34%,
+                #ce1126 34%,
+                #ce1126 68%,
+                #fff 68%,
+                #fff 84%,
+                #002b7f 0);
+    }
+
+    /* #42 */
+    /* ==================================================== */
+    /* ============= Style for Croatia's Flag ============ */
+    /* ==================================================== */
+
+    .croatia {
+        background: linear-gradient(#ff0000 33%, #fff 33%, #fff 67%, #171796 0);
+    }
+
+    .croatia__logo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        height: 115px;
+    }
+
+    /* #43 */
+    /* ==================================================== */
+    /* ============= Style for Cuban's Flag ============ */
+    /* ==================================================== */
+
+    .cuban {
+        background: repeating-linear-gradient(#002a8f,
+                #002a8f 20%,
+                #fff 20%,
+                #fff 40%);
+    }
+
+    .cuban::before {
+        position: absolute;
+        content: "";
+        border-width: 100px 140px;
+        border-style: solid;
+        border-color: transparent transparent transparent #cf142b;
+    }
+
+    .cuban::after {
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        margin: 70px 14px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #44 */
+    /* ==================================================== */
+    /* ============= Style for Cyprus's Flag ============= */
+    /* ==================================================== */
+
+    .cyprus {
+        background-color: #fff;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #45 */
+    /* ==================================================== */
+    /* ============= Style for Czechia's Flag ============= */
+    /* ==================================================== */
+
+    .czechia {
+        background: linear-gradient(#fff 50%, #d80f1e 0);
+    }
+
+    .czechia::before {
+        position: absolute;
+        content: "";
+        border-width: 100px 150px;
+        border-style: solid;
+        border-color: transparent transparent transparent #00437a;
+    }
+
+    /* #46 */
+    /* ==================================================== */
+    /* ============= Style for Denmark's Flag ============= */
+    /* ==================================================== */
+
+    .denmark {
+        background-color: #c70c29;
+    }
+
+    .denmark::before {
+        position: absolute;
+        content: "";
+        height: 200px;
+        right: 195px;
+        left: 75px;
+        background-color: white;
+    }
+
+    .denmark::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        top: 85px;
+        bottom: 85px;
+        background-color: white;
+    }
+
+    /* #47 */
+    /* ==================================================== */
+    /* ============= Style for Djibouti's Flag ============ */
+    /* ==================================================== */
+
+    .djibouti {
+        background: linear-gradient(#60b0e2 50%, #04aa3b 0);
+    }
+
+    .djibouti::before {
+        position: absolute;
+        content: "";
+        border-width: 100px 170px;
+        border-style: solid;
+        border-color: transparent transparent transparent #fff;
+    }
+
+    .djibouti::after {
+        position: absolute;
+        content: "";
+        width: 52px;
+        height: 52px;
+        background-color: #d61a28;
+        margin: 73px 46px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #48 */
+    /* ==================================================== */
+    /* ============= Style for Dominica's Flag ============ */
+    /* ==================================================== */
+
+    .dominica {
+        display: grid;
+        place-items: center;
+        background-color: #006d41;
+    }
+
+    .dominica>img {
+        z-index: 1;
+    }
+
+    .dominica__horizontal_strip,
+    .dominica__vertical__strip {
+        position: absolute;
+        width: 100%;
+        height: 17px;
+        background-color: black;
+
+        box-shadow: 0 -15px #f9d016, 0 15px #fff;
+    }
+
+    .dominica__vertical__strip {
+        transform: rotate(-90deg);
+    }
+
+    /* #49 */
+    /* ==================================================== */
+    /* ============= Style for Dominican's Flag =========== */
+    /* ==================================================== */
+
+    .dominican {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+        background-color: white;
+    }
+
+    .dominican>div:nth-child(1),
+    .dominican>div:nth-child(4) {
+        background-color: #0f2e6b;
+    }
+
+    .dominican>div:nth-child(2),
+    .dominican>div:nth-child(3) {
+        background-color: #cd1325;
+    }
+
+    .dominican__logo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+
+    /* #50 */
+    /* ==================================================== */
+    /* ============= Style for East Timor's Flag ========== */
+    /* ==================================================== */
+
+    .east_timor {
+        background-color: #da291c;
+    }
+
+    .east_timor::before {
+        position: absolute;
+        content: "";
+        border: 100px solid #da291c;
+        border-left: 150px solid #ffc72c;
+    }
+
+    .east_timor::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        border: 100px solid transparent;
+        border-left: 100px solid black;
+    }
+
+    .east_timor__star {
+        transform: rotate(-25deg);
+        position: absolute;
+        left: 3%;
+        top: 35%;
+
+        width: 55px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        z-index: 1;
+    }
+
+    /* #51 */
+    /* ==================================================== */
+    /* ============= Style for Ecuador's Flag ============= */
+    /* ==================================================== */
+
+    .ecuador {
+        background: linear-gradient(#fcda00 50%, #0757a0 50%, #0757a0 75%, #eb1f2a 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #52 */
+    /* ==================================================== */
+    /* ============= Style for Egypt's Flag ============= */
+    /* ==================================================== */
+
+    .egypt {
+        background: linear-gradient(#ce2029 33%, #fff 33%, #fff 67%, #000 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #53 */
+    /* ==================================================== */
+    /* ============= Style for Salvador's Flag ============ */
+    /* ==================================================== */
+
+    .el_salvador {
+        background: linear-gradient(#284da0 33%, #fff 33%, #fff 67%, #284da0 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #54 */
+    /* ==================================================== */
+    /* ========== Style for Equatorial Guinea's Flag ====== */
+    /* ==================================================== */
+
+    .equatorial_guinea {
+        background: linear-gradient(#30a035 33%, #fff 33%, #fff 67%, #e02020 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .equatorial_guinea::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        border-width: 100px 75px;
+        border-color: transparent transparent transparent #1e73ba;
+        border-style: solid;
+    }
+
+    /* #55 */
+    /* ==================================================== */
+    /* ========== Style for Eritrea's Flag ====== */
+    /* ==================================================== */
+
+    .eritrea {
+        background: linear-gradient(#0faa3b 50%, #2e81cc 0);
+    }
+
+    .eritrea::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        border-width: 100px 300px;
+        border-color: transparent transparent transparent #e50e38;
+        border-style: solid;
+    }
+
+    .eritrea__logo {
+        position: absolute;
+        left: 7%;
+        top: 30%;
+    }
+
+    /* #56 */
+    /* ==================================================== */
+    /* ============= Style for Estonia's Flag ============= */
+    /* ==================================================== */
+
+    .estonia {
+        background: linear-gradient(#4d8fcc 33%, #000 33%, #000 67%, #fff 0);
+    }
+
+    /* #57 */
+    /* ==================================================== */
+    /* ============= Style for Eswatini's Flag ============ */
+    /* ==================================================== */
+    .eswatini {
+        background: linear-gradient(#3e5eb9 15%,
+                #ffd900 15%,
+                #ffd900 25%,
+                #b10c0c 25%,
+                #b10c0c 75%,
+                #ffd900 75%,
+                #ffd900 85%,
+                #3e5eb9 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #58 */
+    /* ==================================================== */
+    /* ============= Style for Ethiopia's Flag ============= */
+    /* ==================================================== */
+    .ethiopia {
+        background: linear-gradient(#138844 33%, #f9da01 33%, #f9da01 67%, #d81f28 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #59 */
+    /* ==================================================== */
+    /* ============= Style for Fiji's Flag ============= */
+    /* ==================================================== */
+
+    .fiji {
+        background: #69bfe5;
+    }
+
+    .fiji__left__top {
+        width: 124px;
+        height: 71px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+        background: #213064;
+    }
+
+    .fiji__plus {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 5px white) drop-shadow(5px 0 white) drop-shadow(-5px 0 white) drop-shadow(0 -5px white);
+    }
+
+    .fiji__plus .plus {
+        width: 100%;
+        height: 100%;
+        background-color: #e51837;
+        clip-path: polygon(0% 43%,
+                45% 43%,
+                45% 0%,
+                55% 0%,
+                55% 43%,
+                100% 43%,
+                100% 58%,
+                55% 58%,
+                55% 100%,
+                45% 100%,
+                45% 58%,
+                0% 58%);
+    }
+
+    .fiji__x {
+        position: absolute;
+        inset: 0;
+    }
+
+    .fiji__x>.x__strip-1,
+    .fiji__x>.x__strip-2 {
+        position: relative;
+        background-color: white;
+        width: 150%;
+        height: 10px;
+        transform: rotate(-30deg) scale(1.3) translate(0px, 10px);
+    }
+
+    .fiji__x>.x__strip-2 {
+        transform: rotate(30deg) scale(1.3) translate(13px, 26px);
+    }
+
+    .fiji__x>.x__strip-1::before,
+    .fiji__x>.x__strip-1::after,
+    .fiji__x>.x__strip-2::before,
+    .fiji__x>.x__strip-2::after {
+        position: absolute;
+        background-color: #e51837;
+        content: "";
+        width: 35%;
+        height: 4px;
+    }
+
+    .fiji__x>.x__strip-1::before {
+        top: 5px;
+    }
+
+    .fiji__x>.x__strip-1::after {
+        top: 1px;
+        left: 35%;
+    }
+
+    .fiji__x>.x__strip-2::before {
+        top: 5px;
+    }
+
+    .fiji__x>.x__strip-2::after {
+        top: 1px;
+        left: 35%;
+    }
+
+    .fiji__logo {
+        position: absolute;
+        right: 14%;
+        top: 24%;
+    }
+
+    /* #60 */
+    /* ==================================================== */
+    /* ============= Style for Finland's Flag ============= */
+    /* ==================================================== */
+
+    .finland {
+        background: linear-gradient(#fff 75px, #233d7b 75px, #233d7b 125px, #fff 0);
+    }
+
+    .finland::before {
+        position: absolute;
+        content: "";
+
+        width: 50px;
+        height: 100%;
+        background-color: #233d7b;
+        left: 25%;
+    }
+
+    /* #61 */
+    /* ==================================================== */
+    /* ============= Style for France's Flag ============= */
+    /* ==================================================== */
+
+    .france {
+        background: linear-gradient(to right,
+                #192f8e 33%,
+                #fff 33%,
+                #fff 67%,
+                #e01414 0);
+    }
+
+    /* #62 */
+    /* ==================================================== */
+    /* ============= Style for Gabon's Flag ============= */
+    /* ==================================================== */
+
+    .gabon {
+        background: linear-gradient(#009957 33%, #fccc00 33%, #fccc00 67%, #3473b7 0);
+    }
+
+    /* #63 */
+    /* ==================================================== */
+    /* ============= Style for Gambia's Flag ============= */
+    /* ==================================================== */
+
+    .gambia {
+        background: linear-gradient(#ce2029 33%,
+                #fff 33%,
+                #fff 40%,
+                #2b3281 40%,
+                #2b3281 60%,
+                #fff 60%,
+                #fff 67%,
+                #3d783a 0);
+    }
+
+    /* #64 */
+    /* ==================================================== */
+    /* ============= Style for Georgia's Flag ============= */
+    /* ==================================================== */
+
+    .georgia {
+        background: #ff0000;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .georgia__rectangle {
+        background-color: white;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #65 */
+    /* ==================================================== */
+    /* ============= Style for Germany's Flag ============= */
+    /* ==================================================== */
+
+    .germany {
+        background: linear-gradient(#000 33%, #de0000 33%, #de0000 67%, #ffcf00 0);
+    }
+
+    /* #66 */
+    /* ==================================================== */
+    /* ============= Style for Ghana's Flag ============= */
+    /* ==================================================== */
+
+    .ghana {
+        background: linear-gradient(#cf0922 33%, #fcd20e 33%, #fcd20e 66%, #006b3d 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .ghana::after {
+        position: absolute;
+        content: "";
+        width: 72px;
+        height: 72px;
+        margin-top: 5px;
+        background-color: black;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #67 */
+    /* ==================================================== */
+    /* ============= Style for Greece's Flag ============= */
+    /* ==================================================== */
+
+    .greece {
+        background: repeating-linear-gradient(#055eb2,
+                #055eb2 11.11%,
+                #fff 11.11%,
+                #fff 22.22%);
+    }
+
+    .greece__top_left {
+        width: 138px;
+        height: 111.33px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .greece__top_left>* {
+        background-color: #055eb2;
+    }
+
+    /* #68 */
+    /* ==================================================== */
+    /* ============= Style for Grenada's Flag ============= */
+    /* ==================================================== */
+
+    .grenada {
+        background-color: #cf0922;
+        padding: 25px;
+    }
+
+    .grenada::before {
+        position: absolute;
+        content: "";
+        border-width: 75px 125px;
+        border-style: solid;
+        border-color: #fcd202 #007b5e;
+        inset: 25px;
+    }
+
+    .grenada__center_circle,
+    .grenada__center_star {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        margin: auto;
+        inset: 0;
+        border-radius: 1in;
+        background-color: #cf0922;
+    }
+
+    .grenada__star {
+        aspect-ratio: 1;
+        background-color: #fcd202;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        z-index: 1;
+    }
+
+    .grenada__top_stars,
+    .grenada__bottom_stars {
+        width: 150px;
+        position: absolute;
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        margin: 0 50px;
+    }
+
+    .grenada__bottom_stars {
+        top: 175px;
+    }
+
+    .grenada__logo {
+        position: absolute;
+        left: 40px;
+        top: 80px;
+    }
+
+    /* #69 */
+    /* ==================================================== */
+    /* ============= Style for Guatemala's Flag =========== */
+    /* ==================================================== */
+
+    .guatemala {
+        background: linear-gradient(to right,
+                #4798d0 33%,
+                #fff 33%,
+                #fff 67%,
+                #4798d0 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #70 */
+    /* ==================================================== */
+    /* ============= Style for Guinea's Flag ============== */
+    /* ==================================================== */
+
+    .guinea {
+        background: linear-gradient(to right,
+                #cf0922 33%,
+                #fcd20e 33%,
+                #fcd20e 67%,
+                #009460 0);
+    }
+
+    /* #71 */
+    /* ==================================================== */
+    /* ========== Style for Guinea-Bissau's Flag ========== */
+    /* ==================================================== */
+
+    .guinea_bissau {
+        background: linear-gradient(#fcd20e 50%, #009e47 0);
+    }
+
+    .guinea_bissau__left_red {
+        background: #cf0922;
+        width: 45%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .guinea_bissau__star {
+        width: 70px;
+        height: 70px;
+        background-color: black;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #72 */
+    /* ==================================================== */
+    /* ============= Style for Guyana's Flag ============== */
+    /* ==================================================== */
+
+    .guyana {
+        background-color: #009e49;
+    }
+
+    .guyana__white,
+    .guyana__yellow {
+        position: absolute;
+        content: "";
+        border-width: 100px 300px;
+        border-color: transparent transparent transparent white;
+        border-style: solid;
+    }
+
+    .guyana__yellow {
+        left: -25px;
+        border-left-color: #fcd116;
+    }
+
+    .guyana__black,
+    .guyana__red {
+        position: absolute;
+        content: "";
+        border-width: 100px 166px;
+        border-color: transparent transparent transparent black;
+        border-style: solid;
+    }
+
+    .guyana__red {
+        left: -25px;
+        border-left-color: #ce1126;
+    }
+
+    /* #73 */
+    /* ==================================================== */
+    /* ============= Style for Haiti's Flag ============== */
+    /* ==================================================== */
+
+    .haiti {
+        background: linear-gradient(#00209f 50%, #d21034 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #74 */
+    /* ==================================================== */
+    /* ============= Style for Honduras's Flag ============ */
+    /* ==================================================== */
+
+    .honduras {
+        background: linear-gradient(#00bde5 33%, #fff 33%, #fff 66%, #00bde5 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .honduras__star {
+        width: 20px;
+        height: 20px;
+        background-color: #00bde5;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .honduras__left_stars {
+        position: absolute;
+        height: 55px;
+        left: 34% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        left: 130px;
+        -webkit-box-reflect: right 55px;
+    }
+
+    /* #75 */
+    /* ==================================================== */
+    /* ============= Style for Hungary's Flag ============= */
+    /* ==================================================== */
+
+    .hungary {
+        background: linear-gradient(#cf2436 33%, #fff 33%, #fff 66%, #45714e 0);
+    }
+
+    /* #76 */
+    /* ==================================================== */
+    /* ============= Style for Iceland's Flag ============= */
+    /* ==================================================== */
+
+    .iceland {
+        background: linear-gradient(#00519d 40%,
+                #fff 40%,
+                #fff 45%,
+                #dd1833 45%,
+                #dd1833 55%,
+                #fff 55%,
+                #fff 60%,
+                #00519d 0);
+    }
+
+    .iceland::before {
+        position: absolute;
+        content: "";
+        left: 86px;
+        background: #dd1833;
+        height: 50%;
+        width: 20px;
+        box-shadow: 0 100px #dd1833, 10px -12px white, -10px -12px white,
+            10px 110px white, -10px 110px white;
+    }
+
+    /* #77 */
+    /* ==================================================== */
+    /* ============= Style for India's Flag ============= */
+    /* ==================================================== */
+
+    .india {
+        background: linear-gradient(#ff9933 33%, #fff 33%, #fff 66%, #138808 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #78 */
+    /* ==================================================== */
+    /* ============= Style for Indonesia's Flag =========== */
+    /* ==================================================== */
+
+    .indonesia {
+        background: linear-gradient(#fe0000 50%, #fff 0);
+    }
+
+    /* #79 */
+    /* ==================================================== */
+    /* ================ Style for Iran's Flag ============= */
+    /* ==================================================== */
+
+    .iran {
+        background: linear-gradient(#239f40 33%, #fff 33%, #fff 66%, #da0000 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .iran>img {
+        position: absolute;
+    }
+
+    /* #80 */
+    /* ==================================================== */
+    /* =============== Style for Iraq's Flag ============== */
+    /* ==================================================== */
+
+    .iraq {
+        background: linear-gradient(#cd1125 33%, #fff 33%, #fff 66%, #000 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #81 */
+    /* ==================================================== */
+    /* =============== Style for Ireland's Flag =========== */
+    /* ==================================================== */
+
+    .ireland {
+        background: linear-gradient(to right,
+                #0e9c62 33%,
+                #fff 33%,
+                #fff 66%,
+                #ff8a3d 0);
+    }
+
+    /* #82 */
+    /* ==================================================== */
+    /* =============== Style for Israel's Flag ============ */
+    /* ==================================================== */
+
+    .israel {
+        background: linear-gradient(#fff 10%,
+                #0038b8 10%,
+                #0038b8 25%,
+                #fff 25%,
+                #fff 75%,
+                #0038b8 75%,
+                #0038b8 90%,
+                #fff 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #83 */
+    /* ==================================================== */
+    /* =============== Style for Italy's Flag ============= */
+    /* ==================================================== */
+
+    .italy {
+        background: linear-gradient(to right,
+                #009343 33%,
+                #fff 33%,
+                #fff 66%,
+                #cf2734 0);
+    }
+
+    /* #84 */
+    /* ==================================================== */
+    /* ============ Style for Ivory Coast's Flag ========== */
+    /* ==================================================== */
+
+    .ivory_coast {
+        background: linear-gradient(to right,
+                #f78000 33%,
+                #fff 33%,
+                #fff 66%,
+                #009f5f 0);
+    }
+
+    /* #85 */
+    /* ==================================================== */
+    /* ============= Style for Jamaica's Flag ============= */
+    /* ==================================================== */
+
+    .jamaica {
+        background: #007848;
+    }
+
+    .jamaica__left_triangle,
+    .jamaica__right_triangle {
+        position: absolute;
+        border-width: 100px 150px;
+        border-color: transparent transparent transparent #feb916;
+        border-style: solid;
+        transform: scale(1.3);
+        left: 30px;
+    }
+
+    .jamaica__left_triangle::after,
+    .jamaica__right_triangle::before {
+        position: absolute;
+        content: "";
+        border-width: 65px 100px;
+        border-color: transparent transparent transparent black;
+        border-style: solid;
+        left: -150px;
+        top: -65px;
+    }
+
+    .jamaica__right_triangle {
+        border-color: transparent #feb916 transparent transparent;
+        left: -30px;
+    }
+
+    .jamaica__right_triangle::before {
+        border-color: transparent black transparent transparent;
+        left: -50px;
+    }
+
+    /* #86 */
+    /* ==================================================== */
+    /* ============= Style for Japan's Flag =============== */
+    /* ==================================================== */
+
+    .japan {
+        background: radial-gradient(circle at 50%, #bc002d 35%, #fff 0);
+    }
+
+    /* #87 */
+    /* ==================================================== */
+    /* ============= Style for Jordan's Flag =============== */
+    /* ==================================================== */
+
+    .jordan {
+        background: linear-gradient(#000 33%, #fff 33%, #fff 66%, #007a3d 0);
+    }
+
+    .jordan::before {
+        position: absolute;
+        content: "";
+        border-width: 100px 150px;
+        border-color: transparent transparent transparent #ce1126;
+        border-style: solid;
+    }
+
+    .jordan>img {
+        position: absolute;
+        left: 22%;
+        top: 43%;
+    }
+
+    /* #88 */
+    /* ==================================================== */
+    /* ============ Style for Kazakhstan's Flag =========== */
+    /* ==================================================== */
+
+    .kazakhstan {
+        background: #00afca;
+    }
+
+    .kazakhstan>* {
+        position: absolute;
+    }
+
+    .kazakhstan__left_logo {
+        left: 3%;
+        top: 5.5%;
+    }
+
+    .kazakhstan__center_logo {
+        left: 90px;
+        top: 15px;
+    }
+
+    /* #89 */
+    /* ==================================================== */
+    /* =============== Style for Kenya's Flag ============= */
+    /* ==================================================== */
+
+    .kenya {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: white;
+    }
+
+    .kenya>* {
+        flex: 1;
+    }
+
+    .kenya__logo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+
+    /* #90 */
+    /* ==================================================== */
+    /* =============== Style for Kiribati's Flag ========== */
+    /* ==================================================== */
+
+    .kiribati {
+        background: #c81010;
+    }
+
+    .kiribati__blue_bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 92px;
+        background: #183070;
+        z-index: 1;
+    }
+
+    .kiribati__wave {
+        width: 100%;
+        position: absolute;
+        margin-top: -10px;
+        filter: drop-shadow(0 35px white) drop-shadow(0 70px white);
+    }
+
+    .kiribati__sun {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        height: 82px;
+        z-index: 0;
+    }
+
+    .kiribati__bird {
+        position: absolute;
+        inset: 0;
+        margin: 20px auto;
+    }
+
+    /* #91 */
+    /* ==================================================== */
+    /* =========== Style for North Korea's Flag =========== */
+    /* ==================================================== */
+
+    .north_korea {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background-color: white;
+    }
+
+    .north_korea__circle {
+        background-color: white;
+        height: 80px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        margin: 15px 50px;
+    }
+
+    .north_korea__star {
+        aspect-ratio: 1;
+        background: #ed1c27;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #92 */
+    /* ==================================================== */
+    /* =========== Style for South Korea's Flag =========== */
+    /* ==================================================== */
+
+    .south_korea {
+        background-color: white;
+        display: grid;
+        place-items: center;
+    }
+
+    .south_korea__center_circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(#cd2e3a 50%, #0047a0 0);
+        border-radius: 1in;
+        rotate: 34deg;
+    }
+
+    .south_korea__center_circle::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: #cd2e3a;
+        border-radius: 1in;
+        margin: 25px 0;
+        box-shadow: 50px 0 #0047a0;
+    }
+
+    .south_korea__strips_1,
+    .south_korea__strips_2 {
+        position: absolute;
+        width: 210px;
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .strips {
+        display: flex;
+        gap: 4px;
+    }
+
+    .strips>div {
+        background-color: black;
+        width: 8px;
+        height: 100%;
+    }
+
+    .south_korea__strips_1 {
+        rotate: -34deg;
+    }
+
+    .south_korea__strips_2 {
+        rotate: 34deg;
+    }
+
+    .south_korea__invisible_brick {
+        position: absolute;
+        width: 10px;
+        height: 15px;
+        background-color: white;
+        color: white;
+    }
+
+    .south_korea__invisible_brick:nth-of-type(1) {
+        left: 71px;
+        top: 142px;
+        rotate: -34deg;
+        box-shadow: 167px 0, 191px 0;
+    }
+
+    .south_korea__invisible_brick:nth-of-type(2) {
+        right: 71px;
+        top: 142px;
+        rotate: 34deg;
+        box-shadow: -11px 0, 12px 0;
+    }
+
+    /* #93 */
+    /* ==================================================== */
+    /* ============= Style for Kuwait's Flag ============== */
+    /* ==================================================== */
+
+    .kuwait {
+        background: linear-gradient(#007a3d 33%, #fff 33%, #fff 66%, #ce1126 0);
+    }
+
+    .kuwait::before {
+        position: absolute;
+        content: "";
+        background-color: #000;
+        width: 100px;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 33%, 100% 66%, 0% 100%);
+    }
+
+    /* #94 */
+    /* ==================================================== */
+    /* ============= Style for Kyrgyzstan's Flag ========== */
+    /* ==================================================== */
+
+    .kyrgyzstan {
+        background-color: #ff0000;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #95 */
+    /* ==================================================== */
+    /* ============= Style for Laos's Flag ================ */
+    /* ==================================================== */
+
+    .laos {
+        background: linear-gradient(#ce1126 25%, #002868 25%, #002868 75%, #ce1126 0);
+    }
+
+    .laos::before {
+        position: absolute;
+        content: "";
+        width: 80px;
+        height: 80px;
+        inset: 0;
+        margin: auto;
+        background-color: white;
+        border-radius: 1in;
+    }
+
+    /* #96 */
+    /* ==================================================== */
+    /* ============= Style for Latvia's Flag ============== */
+    /* ==================================================== */
+
+    .latvia {
+        background: linear-gradient(#9e3039 40%, #fff 40%, #fff 60%, #9e3039 0);
+    }
+
+    /* #97 */
+    /* ==================================================== */
+    /* ============= Style for Lebanon's Flag ============= */
+    /* ==================================================== */
+
+    .lebanon {
+        background: linear-gradient(#ed1c24 25%, #fff 25%, #fff 75%, #ed1c24 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #98 */
+    /* ==================================================== */
+    /* ============= Style for Lesotho's Flag ============= */
+    /* ==================================================== */
+
+    .lesotho {
+        background: linear-gradient(#001489 30%, #fff 30%, #fff 70%, #009a44 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #99 */
+    /* ==================================================== */
+    /* ============= Style for Liberia's Flag ============= */
+    /* ==================================================== */
+
+    .liberia {
+        background: repeating-linear-gradient(#c0032d,
+                #c0032d 18.18px,
+                #fff 18.18px,
+                #fff 36.36px);
+    }
+
+    .liberia::before {
+        position: absolute;
+        content: "";
+        width: 91.2px;
+        aspect-ratio: 1;
+        background-color: #002367;
+    }
+
+    .liberia::after {
+        position: absolute;
+        content: "";
+        height: 54px;
+        aspect-ratio: 1;
+        background-color: white;
+        margin: 18px 20px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #100 */
+    /* ==================================================== */
+    /* ============= Style for Libya's Flag =============== */
+    /* ==================================================== */
+
+    .libya {
+        background: linear-gradient(#e70013 25%, #000 25%, #000 75%, #239e46 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .libya::before {
+        position: absolute;
+        content: "";
+        width: 42px;
+        height: 42px;
+        border-radius: 1in;
+        box-shadow: -5px 0 0 3px white;
+        margin-left: -10px;
+    }
+
+    .libya::after {
+        position: absolute;
+        content: "";
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        rotate: -15deg;
+        margin-left: 35px;
+    }
+
+    /* #101 */
+    /* ==================================================== */
+    /* ========= Style for Liechtenstein's Flag =========== */
+    /* ==================================================== */
+
+    .liechtenstein {
+        background: linear-gradient(#002b7f 50%, #ce1126 0);
+    }
+
+    .liechtenstein>img {
+        position: absolute;
+        left: 12%;
+        top: 9%;
+    }
+
+    /* #102 */
+    /* ==================================================== */
+    /* ========= Style for Lithuania's Flag =============== */
+    /* ==================================================== */
+
+    .lithuania {
+        background: linear-gradient(#fdba0b 33%, #006a42 33%, #006a42 66%, #c2222a 0);
+    }
+
+    /* #103 */
+    /* ==================================================== */
+    /* ========= Style for Luxembourg's Flag ============== */
+    /* ==================================================== */
+
+    .luxembourg {
+        background: linear-gradient(#ee2336 33%, #fff 33%, #fff 66%, #00a2e0 0);
+    }
+
+    /* #104 */
+    /* ==================================================== */
+    /* ========= Style for Madagascar's Flag ============== */
+    /* ==================================================== */
+
+    .madagascar {
+        background: linear-gradient(#fc3a2e 50%, #008036 0);
+    }
+
+    .madagascar::before {
+        content: "";
+        position: absolute;
+        width: calc(100% / 3);
+        height: 100%;
+        background-color: white;
+    }
+
+    /* #105 */
+    /* ==================================================== */
+    /* ========= Style for Malawi's Flag ================== */
+    /* ==================================================== */
+
+    .malawi {
+        background: linear-gradient(#000 33%, #cf0922 33%, #cf0922 66%, #2f9f31 0);
+    }
+
+    .malawi>img {
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        right: 0;
+        top: 10px;
+    }
+
+    /* #106 */
+    /* ==================================================== */
+    /* ========= Style for Malaysia's Flag ================ */
+    /* ==================================================== */
+
+    .malaysia {
+        background: repeating-linear-gradient(#cc0000,
+                #cc0000 7.14%,
+                #fff 7.14%,
+                #fff 14.28%);
+    }
+
+    .malaysia__top_left {
+        width: 50%;
+        height: calc(8 * 7.15%);
+        background: #000066;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #107 */
+    /* ==================================================== */
+    /* ========= Style for Maldives's Flag ================ */
+    /* ==================================================== */
+
+    .maldives {
+        background: #d21034;
+    }
+
+    .maldives::before {
+        position: absolute;
+        content: "";
+        inset: 50px;
+        background-color: #007e3a;
+    }
+
+    .maldives::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        margin: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 1in;
+        left: 19px;
+        box-shadow: -13px 0 white;
+    }
+
+    /* #108 */
+    /* ==================================================== */
+    /* ============= Style for Mali's Flag ================ */
+    /* ==================================================== */
+
+    .mali {
+        background: linear-gradient(to right,
+                #0cb737 33%,
+                #fcd20e 33%,
+                #fcd20e 66%,
+                #cf0922 0);
+    }
+
+    /* #109 */
+    /* ==================================================== */
+    /* ============= Style for Malta's Flag =============== */
+    /* ==================================================== */
+
+    .malta {
+        background: linear-gradient(to right, #fff 50%, #cf142b 0);
+        padding: 1%;
+    }
+
+    /* #110 */
+    /* ==================================================== */
+    /* ========= Style for Marshall Islands's Flag ======== */
+    /* ==================================================== */
+
+    .marshall_islands {
+        background-color: #003893;
+    }
+
+    .marshall_islands>div {
+        position: absolute;
+        width: 100%;
+    }
+
+    .marshall_islands>img {
+        margin: 10px;
+    }
+
+    .marshall_islands__yellow,
+    .marshall_islands__white {
+        height: 30px;
+        top: 100px;
+        transform: scaleX(2) rotate(-50deg);
+        background-color: #dd7500;
+    }
+
+    .marshall_islands__white {
+        top: 125px;
+        transform: scaleX(2) rotate(-43deg);
+        background-color: white;
+    }
+
+    .marshall_islands__bottom_blue {
+        background-color: #003893;
+        height: 50%;
+        bottom: -55px;
+        transform: scaleX(2) rotate(-35deg);
+    }
+
+    /* #111 */
+    /* ==================================================== */
+    /* ========== Style for Mauritania's Flag ============= */
+    /* ==================================================== */
+
+    .mauritania {
+        background: linear-gradient(#d01c1f 20%, #00a95c 20%, #00a95c 80%, #d01c1f 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .mauritania::before {
+        position: absolute;
+        content: "";
+        border-radius: 1in;
+        width: 150px;
+        bottom: 75px;
+        aspect-ratio: 1;
+        box-shadow: 0 25px 0 -5px #ffd700;
+    }
+
+    .mauritania::after {
+        position: absolute;
+        content: "";
+        width: 40px;
+        aspect-ratio: 1;
+        background-color: #ffd700;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        margin-bottom: 20px;
+    }
+
+    /* #112 */
+    /* ==================================================== */
+    /* ========== Style for Mauritius's Flag ============== */
+    /* ==================================================== */
+
+    .mauritius {
+        background: linear-gradient(#ea2336 25%,
+                #13196d 25%,
+                #13196d 50%,
+                #ffd600 50%,
+                #ffd600 75%,
+                #00a650 0);
+    }
+
+    /* #113 */
+    /* ==================================================== */
+    /* ============= Style for Mexico's Flag ============== */
+    /* ==================================================== */
+
+    .mexico {
+        background: linear-gradient(to right,
+                #006845 33%,
+                #fff 33%,
+                #fff 66%,
+                #cf0922 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #114 */
+    /* ==================================================== */
+    /* =========== Style for Micronesia's Flag ============ */
+    /* ==================================================== */
+
+    .micronesia {
+        background-color: #75b2dd;
+        display: grid;
+        place-items: center;
+    }
+
+    .micronesia__grid {
+        width: 50%;
+        display: grid;
+        gap: 10px;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .micronesia__grid_row {
+        justify-self: center;
+    }
+
+    .micronesia__grid_row:nth-child(1),
+    .micronesia__grid_row:nth-child(3) {
+        rotate: -35deg;
+    }
+
+    .micronesia__grid_row:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        gap: 70px;
+    }
+
+    .micronesia__grid_row:nth-child(2)>.micronesia__star:nth-child(1) {
+        rotate: -15deg;
+    }
+
+    .micronesia__grid_row:nth-child(2)>.micronesia__star:nth-child(2) {
+        rotate: 15deg;
+    }
+
+    .micronesia__star {
+        width: 42px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #115 */
+    /* ==================================================== */
+    /* ============= Style for Moldova's Flag ============= */
+    /* ==================================================== */
+
+    .moldova {
+        background: linear-gradient(to right,
+                #0046ae 33%,
+                #ffd200 33%,
+                #ffd200 66%,
+                #cc092f 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #116 */
+    /* ==================================================== */
+    /* ============= Style for Monaco's Flag ============== */
+    /* ==================================================== */
+
+    .monaco {
+        background: linear-gradient(#cf0922 50%, #fff 0);
+    }
+
+    /* #117 */
+    /* ==================================================== */
+    /* ============= Style for Mongolia's Flag ============= */
+    /* ==================================================== */
+
+    .mongolia {
+        background: linear-gradient(to right,
+                #db1a2d 33%,
+                #0065b3 33%,
+                #0065b3 66%,
+                #db1a2d 0);
+    }
+
+    .mongolia>img {
+        margin: 25px 13px;
+    }
+
+    /* #118 */
+    /* ==================================================== */
+    /* ============= Style for Montenegro's Flag ========== */
+    /* ==================================================== */
+
+    .montenegro {
+        border: 10px solid #e9b528;
+        background-color: #e30613;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #119 */
+    /* ==================================================== */
+    /* ============= Style for Morocco's Flag ============= */
+    /* ==================================================== */
+
+    .morocco {
+        background-color: #c2222a;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #120 */
+    /* ==================================================== */
+    /* ============= Style for Mozambique's Flag ========== */
+    /* ==================================================== */
+
+    .mozambique {
+        background: linear-gradient(#007168 50%, #fce100 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .mozambique::before {
+        position: absolute;
+        content: "";
+        height: 33%;
+        width: 100%;
+        background: black;
+        border: 7px solid white;
+        transform: scaleX(10px);
+    }
+
+    .mozambique::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        border-width: 100px 130px;
+        border-style: solid;
+        border-color: transparent transparent transparent #d21034;
+    }
+
+    .mozambique>img {
+        position: absolute;
+        left: 5px;
+        top: 60px;
+        z-index: 1;
+    }
+
+    /* #121 */
+    /* ==================================================== */
+    /* ============= Style for Myanmar's Flag ============= */
+    /* ==================================================== */
+
+    .myanmar {
+        background: linear-gradient(#ffcc01 33%, #31b32f 33%, #31b32f 66%, #ea2336 0);
+    }
+
+    .myanmar::before {
+        content: "";
+        position: absolute;
+        margin: 25px 75px;
+        width: 150px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #122 */
+    /* ==================================================== */
+    /* ============= Style for Namibia's Flag ============= */
+    /* ==================================================== */
+
+    .namibia {
+        background: linear-gradient(145deg,
+                #003580 40%,
+                #fff 40%,
+                #fff 43%,
+                #d21034 43%,
+                #d21034 57%,
+                #fff 57%,
+                #fff 60%,
+                #009543 0);
+    }
+
+    .namibia>img {
+        position: absolute;
+        left: 25px;
+        top: 20px;
+    }
+
+    /* #123 */
+    /* ==================================================== */
+    /* ============= Style for Nauru's Flag =============== */
+    /* ==================================================== */
+
+    .nauru {
+        background: linear-gradient(#002b7f 90px,
+                #ffc61e 90px,
+                #ffc61e 110px,
+                #002b7f 0);
+    }
+
+    .nauru>img {
+        position: absolute;
+        left: 17%;
+        bottom: 10%;
+    }
+
+    /* #124 */
+    /* ==================================================== */
+    /* ============= Style for Nauru's Flag =============== */
+    /* ==================================================== */
+
+    .nepal__bg_blue {
+        position: absolute;
+        top: 40px;
+        border-width: 160px;
+        border-style: solid;
+        border-color: transparent transparent transparent #003893;
+    }
+
+    .nepal__bg_red {
+        position: absolute;
+        top: -146px;
+        left: -154px;
+        border-width: 154px 154px;
+        border-style: solid;
+        border-color: transparent transparent transparent #dc143c;
+    }
+
+    /* top blue triangle */
+    .nepal__bg_blue::before {
+        position: absolute;
+        content: "";
+        top: -150px;
+        left: -160px;
+        border-width: 50px 160px;
+        transform: skewY(17deg);
+        border-style: solid;
+        border-color: transparent transparent transparent #003893;
+    }
+
+    /* top red triangle */
+    .nepal__bg_red::before {
+        position: absolute;
+        content: "";
+        top: -152px;
+        left: -154px;
+        border-width: 43px 144px;
+        transform: skewY(18deg);
+        border-style: solid;
+        border-color: transparent transparent transparent #dc143c;
+    }
+
+    .nepal__blue_strip {
+        position: absolute;
+        left: 50px;
+        top: 95.5px;
+        transform: skewX(47deg);
+        background: yellow;
+        background-color: #003893;
+        height: 5px;
+        width: 100px;
+    }
+
+    .nepal__blue_strip:nth-child(2) {
+        top: 196px;
+        left: 0;
+        width: 154px;
+    }
+
+    .nepal>img {
+        position: absolute;
+    }
+
+    .nepal>.nepal__top_image {
+        left: 12px;
+        top: 55px;
+    }
+
+    .nepal>.nepal__bottom_image {
+        top: 58%;
+        bottom: 11%;
+    }
+
+    /* #125 */
+    /* ==================================================== */
+    /* ========= Style for Netherlands's Flag ============= */
+    /* ==================================================== */
+
+    .netherlands {
+        background: linear-gradient(#ae1623 33%, #fff 33%, #fff 66%, #1c448c 0);
+    }
+
+    /* #126 */
+    /* ==================================================== */
+    /* ========= Style for Netherlands's Flag ============= */
+    /* ==================================================== */
+
+    .new_zealand {
+        background: #012169;
+    }
+
+    .new_zealand__left__top {
+        width: 50%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .new_zealand__plus {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 7px white) drop-shadow(7px 0 white) drop-shadow(-7px 0 white) drop-shadow(0 -7px white);
+    }
+
+    .new_zealand__plus .plus {
+        width: 100%;
+        height: 100%;
+        background-color: #c8102e;
+        clip-path: polygon(0% 40%,
+                43% 40%,
+                43% 0%,
+                58% 0%,
+                58% 40%,
+                100% 40%,
+                100% 60%,
+                58% 60%,
+                58% 100%,
+                43% 100%,
+                43% 60%,
+                0% 60%);
+    }
+
+    .new_zealand__x {
+        position: absolute;
+        inset: 0;
+    }
+
+    .new_zealand__x>.x__strip-1,
+    .new_zealand__x>.x__strip-2 {
+        position: relative;
+        background-color: white;
+        width: 150%;
+        height: 20px;
+        transform: rotate(-32deg) scalex(1.2) translate(-13px, 15px);
+    }
+
+    .new_zealand__x>.x__strip-2 {
+        transform: rotate(32deg) scalex(1.2) translate(13px, 37px);
+    }
+
+    .new_zealand__x>.x__strip-1::before,
+    .new_zealand__x>.x__strip-1::after,
+    .new_zealand__x>.x__strip-2::before,
+    .new_zealand__x>.x__strip-2::after {
+        position: absolute;
+        background-color: #c8102e;
+        content: "";
+        width: 35%;
+        height: 14px;
+    }
+
+    .new_zealand__x>.x__strip-1::before,
+    .new_zealand__x>.x__strip-2::before {
+        top: 3px;
+    }
+
+    .new_zealand__x>.x__strip-1::after,
+    .new_zealand__x>.x__strip-2::after {
+        bottom: 3px;
+        left: 35%;
+    }
+
+    .new_zealand__star_wrap,
+    .new_zealand__star {
+        width: 35px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        display: grid;
+        place-items: center;
+    }
+
+    .new_zealand__star_wrap {
+        position: absolute;
+    }
+
+    .new_zealand__star_wrap .new_zealand__star {
+        background-color: #c8102e;
+        width: 65%;
+    }
+
+    .new_zealand__star_wrap:nth-child(2) {
+        left: 71%;
+        top: 11%;
+    }
+
+    .new_zealand__star_wrap:nth-child(3) {
+        left: 59%;
+        top: 34%;
+    }
+
+    .new_zealand__star_wrap:nth-child(4) {
+        left: 81%;
+        top: 30%;
+        width: 30px;
+    }
+
+    .new_zealand__star_wrap:nth-child(5) {
+        left: 70%;
+        top: 70%;
+        width: 40px;
+    }
+
+    /* #127 */
+    /* ==================================================== */
+    /* ========= Style for Nicaragua's Flag =============== */
+    /* ==================================================== */
+
+    .nicaragua {
+        background: linear-gradient(#0067c6 33%, #fff 33%, #fff 66%, #0067c6 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #128 */
+    /* ==================================================== */
+    /* ========= Style for Nicaragua's Flag =============== */
+    /* ==================================================== */
+
+    .niger {
+        background: linear-gradient(#e05206 33%, #fff 33%, #fff 66%, #0cb02b 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .niger::before {
+        position: absolute;
+        content: "";
+        width: 55px;
+        aspect-ratio: 1;
+        background-color: #e05206;
+        border-radius: 1in;
+    }
+
+    /* #129 */
+    /* ==================================================== */
+    /* ========= Style for Nigeria's Flag ================ */
+    /* ==================================================== */
+
+    .nigeria {
+        background: linear-gradient(to right,
+                #018850 33%,
+                #fff 33%,
+                #fff 66%,
+                #018850 0);
+    }
+
+    /* #130 */
+    /* ==================================================== */
+    /* ========= Style for North Macedonia's Flag ========= */
+    /* ==================================================== */
+
+    .north_macedonia {
+        background: #d91a21;
+    }
+
+    .north_macedonia::before {
+        content: "";
+        position: absolute;
+        background-color: #f8e92e;
+        inset: 0;
+        margin: auto;
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        border: 6px solid #d91a21;
+        z-index: 1;
+    }
+
+    .north_macedonia>.left_shapes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 50%;
+        -webkit-box-reflect: right 0;
+    }
+
+    .north_macedonia>.left_shapes>.shape,
+    .north_macedonia>.top__shape,
+    .north_macedonia>.bottom__shape {
+        background-color: #f8e92e;
+        width: 100%;
+        height: 40px;
+        clip-path: polygon(0 0, 100% 45%, 100% 55%, 0% 100%);
+    }
+
+    .north_macedonia>.left_shapes>.shape:nth-child(1) {
+        transform: scaleX(1.5) rotate(50deg);
+    }
+
+    .north_macedonia>.left_shapes>.shape:nth-child(3) {
+        transform: scaleX(1.5) rotate(-50deg);
+    }
+
+    .north_macedonia>.top__shape,
+    .north_macedonia>.bottom__shape {
+        position: absolute;
+        margin: 0 auto;
+        width: 25%;
+        height: 50px;
+        rotate: 90deg;
+        left: 29%;
+        top: 11px;
+        transform: translatey(-50%);
+    }
+
+    .north_macedonia>.bottom__shape {
+        transform: scaleX(-1);
+        top: 70%;
+        left: 38%;
+    }
+
+    /* #131 */
+    /* ==================================================== */
+    /* ============= Style for Norway's Flag ============== */
+    /* ==================================================== */
+
+    .norway {
+        background: linear-gradient(#ba043c 40%,
+                #fff 40%,
+                #fff 45%,
+                #011a5c 45%,
+                #011a5c 55%,
+                #fff 55%,
+                #fff 60%,
+                #ba043c 0);
+    }
+
+    .norway::before {
+        position: absolute;
+        content: "";
+        left: 86px;
+        background: #011a5c;
+        height: 50%;
+        width: 20px;
+        box-shadow: 0 100px #011a5c, 10px -10px white, -10px -10px white,
+            10px 110px white, -10px 110px white;
+    }
+
+    /* #132 */
+    /* ==================================================== */
+    /* =============== Style for Oman's Flag ============== */
+    /* ==================================================== */
+
+    .oman {
+        background: linear-gradient(#fff 33%, #db161b 33%, #db161b 66%, #008000 0);
+    }
+
+    .oman::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 75px;
+        background-color: #db161b;
+    }
+
+    .oman>img {
+        position: absolute;
+        z-index: 1;
+        margin: 8px 15px;
+    }
+
+    /* #133 */
+    /* ==================================================== */
+    /* =========== Style for Pakistan's Flag ============== */
+    /* ==================================================== */
+
+    .pakistan {
+        background: linear-gradient(to right, #fff 100px, #01411c 0);
+    }
+
+    .pakistan::before {
+        content: "";
+        position: absolute;
+        width: 110px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        left: 155px;
+        top: 30px;
+        box-shadow: -20px 20px white;
+    }
+
+    .pakistan::after {
+        content: "";
+        position: absolute;
+        width: 38px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        left: 64%;
+        top: 31%;
+        transform: rotate(-23deg);
+    }
+
+    /* #134 */
+    /* ==================================================== */
+    /* =========== Style for Palau's Flag ================= */
+    /* ==================================================== */
+
+    .palau {
+        background: #0099ff;
+    }
+
+    .palau::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto 75px;
+        width: 120px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        background-color: #ffff00;
+    }
+
+    /* #135 */
+    /* ==================================================== */
+    /* =========== Style for Palestine's Flag ============= */
+    /* ==================================================== */
+
+    .palestine {
+        background: linear-gradient(#000 33%, #fff 33%, #fff 66%, #009639 0);
+    }
+
+    .palestine::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        border: 100px solid transparent;
+        border-left-color: #ed2e38;
+    }
+
+    /* #136 */
+    /* ==================================================== */
+    /* =========== Style for Panama's Flag ================ */
+    /* ==================================================== */
+
+    .panama {
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .panama>div {
+        display: grid;
+        place-items: center;
+    }
+
+    .panama__star {
+        width: 50px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #137 */
+    /* ==================================================== */
+    /* ======== Style for Papua New Guinea's Flag ========= */
+    /* ==================================================== */
+
+    .papua_new_guinea {
+        background: linear-gradient(34deg, #000 50%, #ce1126 0);
+    }
+
+    .papua_new_guinea>img {
+        position: absolute;
+        left: 50.61%;
+        top: 10.76%;
+    }
+
+    .papua_new_guinea__stars {
+        position: absolute;
+        left: 9%;
+        top: 30%;
+        width: 91px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .papua_new_guinea__stars>.stars__row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 13px;
+    }
+
+    .papua_new_guinea__star,
+    .papua_new_guinea>.absolute_star {
+        align-self: center;
+        width: 28px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .papua_new_guinea>.absolute_star {
+        width: 14px;
+        position: absolute;
+        left: 28%;
+        top: 68%;
+    }
+
+    /* #138 */
+    /* ==================================================== */
+    /* ========== Style for Paraguay's Flag =============== */
+    /* ==================================================== */
+
+    .paraguay {
+        background: linear-gradient(#d72718 33%, #fff 33%, #fff 66%, #0035a9 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #139 */
+    /* ==================================================== */
+    /* ============== Style for Peru's Flag =============== */
+    /* ==================================================== */
+
+    .peru {
+        background: linear-gradient(to right,
+                #db071e 33%,
+                #fff 33%,
+                #fff 66%,
+                #db071e 0);
+    }
+
+    /* #140 */
+    /* ==================================================== */
+    /* ========== Style for Philippines's Flag ============ */
+    /* ==================================================== */
+
+    .philippines {
+        background: linear-gradient(#0035a9 50%, #cf0922 0);
+    }
+
+    .philippines::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        border-width: 100px 150px;
+        border-style: solid;
+        border-color: transparent;
+        border-left-color: white;
+    }
+
+    .philippines>img {
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+    }
+
+    .philippines__star {
+        position: absolute;
+        width: 20px;
+        aspect-ratio: 1;
+        background-color: #fcd20e;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        z-index: 1;
+    }
+
+    .philippines__star:nth-child(1) {
+        left: 1%;
+        top: 8%;
+        transform: rotate(-20deg);
+    }
+
+    .philippines__star:nth-child(2) {
+        left: 37%;
+        top: 45%;
+        transform: rotate(20deg);
+    }
+
+    .philippines__star:nth-child(3) {
+        left: 1%;
+        top: 82%;
+        transform: rotate(-5deg);
+    }
+
+    /* #141 */
+    /* ==================================================== */
+    /* ========== Style for Poland's Flag ================= */
+    /* ==================================================== */
+
+    .poland {
+        background: linear-gradient(#fff 50%, #de0c39 0);
+    }
+
+    /* #142 */
+    /* ==================================================== */
+    /* ========== Style for Portugal's Flag =============== */
+    /* ==================================================== */
+
+    .portugal {
+        background: linear-gradient(to right, #060 40%, #ff0000 0);
+    }
+
+    .portugal>img {
+        position: absolute;
+        left: 70px;
+        top: 50px;
+    }
+
+    /* #143 */
+    /* ==================================================== */
+    /* =========== Style for Qatar's Flag ================= */
+    /* ==================================================== */
+
+    .qatar {
+        background-color: #8a1538;
+    }
+
+    .qatar::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 65px;
+        height: 100%;
+        background-color: white;
+    }
+
+    .qatar__triangle {
+        position: absolute;
+        left: 60px;
+        top: -15px;
+        background-color: rgb(255 255 255);
+        width: 50px;
+        height: 50px;
+        clip-path: polygon(0 25%, 0 75%, 100% 51%);
+    }
+
+    .qatar_wrap {
+        filter: drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white) drop-shadow(0 22.4px white);
+    }
+
+    /* #144 */
+    /* ==================================================== */
+    /* ============== Style for Romania's Flag ============ */
+    /* ==================================================== */
+
+    .romania {
+        background: linear-gradient(to right,
+                #00277f 33%,
+                #fcd20e 33%,
+                #fcd20e 66%,
+                #cf0922 0);
+    }
+
+    /* #145 */
+    /* ==================================================== */
+    /* ============== Style for Russia's Flag ============= */
+    /* ==================================================== */
+
+    .russia {
+        background: linear-gradient(#fff 33%, #0136a8 33%, #0136a8 66%, #d72718 0);
+    }
+
+    /* #146 */
+    /* ==================================================== */
+    /* ============== Style for Rwanda's Flag ============= */
+    /* ==================================================== */
+
+    .rwanda {
+        background: linear-gradient(#00a1de 50%, #fad201 50%, #fad201 75%, #20603d 0);
+    }
+
+    .rwanda>img {
+        position: absolute;
+        right: 7%;
+        top: 10%;
+    }
+
+    /* #147 */
+    /* ==================================================== */
+    /* ====== Style for Saint Kitts and Nevis's Flag ====== */
+    /* ==================================================== */
+
+    .saint_kitts_and_nevis {
+        background: linear-gradient(-33.5deg, #c8102e 50%, #009739 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .saint_kitts_and_nevis__black_strip {
+        width: 150%;
+        height: 70px;
+        border: 10px solid #ffcd00;
+        background-color: black;
+        transform: rotate(-34deg);
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    .saint_kitts_and_nevis__star {
+        height: 100%;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #148 */
+    /* ==================================================== */
+    /* ========= Style for Saint Lucia's Flag ============= */
+    /* ==================================================== */
+
+    .saint_lucia {
+        background: #66ccff;
+        display: grid;
+        place-items: center;
+    }
+
+    .saint_lucia__outer_triangle {
+        position: relative;
+        width: 130px;
+        height: 164px;
+        background-color: white;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .saint_lucia__outer_triangle::before {
+        content: "";
+        position: absolute;
+        width: 84%;
+        height: 136px;
+        margin: 20px 10px;
+        background-color: black;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .saint_lucia__outer_triangle::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 82px;
+        background-color: #fcd116;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    /* #149 */
+    /* ==================================================== */
+    /*  Style for Saint Vincent and the Grenadines's Flag   */
+    /* ==================================================== */
+
+    .saint_vincent_and_the_grenadines {
+        background: linear-gradient(to right,
+                #012176 75px,
+                #fbd11b 75px,
+                #fbd11b 225px,
+                #007d2b 0);
+
+        display: grid;
+        place-items: center;
+    }
+
+    /* Big center Green Diamond */
+    .saint_vincent_and_the_grenadines__diamond {
+        position: relative;
+        height: 150px;
+        aspect-ratio: 1;
+        background-color: #007c2e;
+        clip-path: polygon(50% 0%, 75% 50%, 50% 100%, 25% 50%);
+    }
+
+    /* Crossed line between diamond */
+    .saint_vincent_and_the_grenadines::before,
+    .saint_vincent_and_the_grenadines::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        left: 50%;
+        top: -10px;
+        background-color: #fbd11b;
+        z-index: 1;
+        transform: rotate(25deg);
+    }
+
+    .saint_vincent_and_the_grenadines::after {
+        transform: rotate(155deg);
+        left: 47%;
+    }
+
+    .saint_vincent_and_the_grenadines__hidden_diamond {
+        position: absolute;
+        top: 15px;
+        z-index: 1;
+        left: 36%;
+        height: 80px;
+        aspect-ratio: 1;
+        background-color: #fbd11b;
+        clip-path: polygon(50% 0%, 75% 50%, 50% 100%, 25% 50%);
+    }
+
+    /* #150 */
+    /* ==================================================== */
+    /* ============= Style for Samoa's Flag =============== */
+    /* ==================================================== */
+
+    .samoa {
+        background: #ce1126;
+    }
+
+    .samoa__blue_box {
+        width: 50%;
+        height: 50%;
+        background-color: #002b7f;
+        /* width: 70px; */
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .samoa__star,
+    .samoa__absolute_star {
+        width: 16px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .samoa__star:nth-child(3) {
+        width: 20px;
+    }
+
+    .samoa_two_stars {
+        display: flex;
+        gap: 40px;
+    }
+
+    .samoa__absolute_star {
+        position: absolute;
+        width: 11px;
+        left: 27%;
+        top: 27%;
+    }
+
+    /* #151 */
+    /* ==================================================== */
+    /* ========== Style for San Marino's Flag ============= */
+    /* ==================================================== */
+
+    .san_marino {
+        background: linear-gradient(#fff 50%, #5eb6e4 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #152 */
+    /* ==================================================== */
+    /* ============ Style for São Tomé's Flag ============= */
+    /* ==================================================== */
+
+    .são_tomé {
+        background: linear-gradient(#009739 30%, #ffd100 30%, #ffd100 70%, #009739 0);
+    }
+
+    .são_tomé::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        border: 100px solid transparent;
+        border-left: 75px solid #ef3340;
+    }
+
+    .são_tomé__center {
+        position: absolute;
+        inset: 0;
+        left: 75px;
+
+        height: 60px;
+        width: 225px;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .são_tomé__star {
+        width: 65px;
+        aspect-ratio: 1;
+        background-color: black;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #153 */
+    /* ==================================================== */
+    /* ======== Style for Saudi Arabia's Flag ============= */
+    /* ==================================================== */
+
+    .saudi_arabia {
+        background: #006c35;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #154 */
+    /* ==================================================== */
+    /* ============ Style for Senegal's Flag ============== */
+    /* ==================================================== */
+
+    .senegal {
+        background: linear-gradient(to right,
+                #00863d 33%,
+                #fdf041 33%,
+                #fdf041 66%,
+                #e3141e 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .senegal::after {
+        position: absolute;
+        content: "";
+        width: 72px;
+        height: 72px;
+        margin-top: 5px;
+        background-color: #00863d;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #155 */
+    /* ==================================================== */
+    /* ============ Style for Serbia's Flag =============== */
+    /* ==================================================== */
+
+    .serbia {
+        background: linear-gradient(#c83339 33%, #033e76 33%, #033e76 66%, #fff 0);
+    }
+
+    .serbia>img {
+        position: absolute;
+        left: 70px;
+        top: 17px;
+    }
+
+    /* #156 */
+    /* ==================================================== */
+    /* ========= Style for Seychelles's Flag ============== */
+    /* ==================================================== */
+
+    .seychelles {
+        background: linear-gradient(120deg,
+                #013a89 100px,
+                #fcda54 100px,
+                #fcda54 250px,
+                #fff 0);
+    }
+
+    .seychelles::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: linear-gradient(130deg, rgb(217 34 35) 130px, rgb(255 255 255) 0);
+        left: 119px;
+        top: 0px;
+        transform: skew(-50deg);
+    }
+
+    .seychelles::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #007a39;
+        top: 170px;
+        transform: scaleX(1.5) rotate(-20deg);
+    }
+
+    /* #157 */
+    /* ==================================================== */
+    /* ======= Style for Sierra Leone's Flag ============== */
+    /* ==================================================== */
+
+    .sierra_leone {
+        background: linear-gradient(#17b636 33%, #fff 33%, #fff 66%, #0073c6 0);
+    }
+
+    /* #158 */
+    /* ==================================================== */
+    /* ========== Style for Singapore's Flag ============== */
+    /* ==================================================== */
+
+    .singapore {
+        background: linear-gradient(#ed2939 50%, #fff 0);
+    }
+
+    .singapore__moon {
+        position: absolute;
+        width: 72px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        box-shadow: -17px 0 white;
+        left: 14%;
+        top: 6.6%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .singapore__middle_stars {
+        display: flex;
+        gap: 15px;
+        margin-top: -3px;
+    }
+
+    .singapore__bottom_stars {
+        display: flex;
+        gap: 5px;
+        margin-top: 2px;
+    }
+
+    .singapore__star {
+        height: 17px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #159 */
+    /* ==================================================== */
+    /* =========== Style for Slovakia's Flag ============== */
+    /* ==================================================== */
+
+    .slovakia {
+        background: linear-gradient(#fff 33%, #0b4ea2 33%, #0b4ea2 66%, #ee1c25 0);
+    }
+
+    .slovakia>img {
+        position: absolute;
+        left: 16%;
+        top: 23%;
+    }
+
+    /* #160 */
+    /* ==================================================== */
+    /* =========== Style for Slovenia's Flag ============== */
+    /* ==================================================== */
+
+    .slovenia {
+        background: linear-gradient(#fff 33%, #0000ff 33%, #0000ff 66%, #ff0000 0);
+    }
+
+    .slovenia>img {
+        position: absolute;
+        left: 19%;
+        top: 17%;
+    }
+
+    /* #161 */
+    /* ==================================================== */
+    /* ======== Style for Solomon Islands's Flag ========== */
+    /* ==================================================== */
+
+    .solomon_islands {
+        background: linear-gradient(147deg,
+                #0051ba 155px,
+                #fcd116 155px,
+                #fcd116 175px,
+                #215b33 0);
+    }
+
+    .solomon_islands__stars {
+        position: absolute;
+        left: 0;
+        width: 122px;
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .solomon_islands__group_stars {
+        margin: 5px;
+        display: flex;
+        gap: 35px;
+    }
+
+    .solomon_islands__star {
+        height: 35px;
+        aspect-ratio: 1;
+        background-color: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #162 */
+    /* ==================================================== */
+    /* ============= Style for Somalia's Flag ============= */
+    /* ==================================================== */
+
+    .somalia {
+        background: #3f89de;
+    }
+
+    .somalia::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        height: 100px;
+        aspect-ratio: 1;
+        background-color: white;
+
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #163 */
+    /* ==================================================== */
+    /* ========== Style for South Africa's Flag =========== */
+    /* ==================================================== */
+
+    .south_africa {
+        background: #007847;
+    }
+
+    /* Black and Yellow Triangle */
+    .south_africa::before,
+    .south_africa::after {
+        position: absolute;
+        content: "";
+        top: 12%;
+        border: 75px solid transparent;
+        border-left: 112px solid #ffb915;
+    }
+
+    /* Black Triangle */
+    .south_africa::after {
+        top: 20%;
+        border-width: 60px 90px;
+        border-left-color: black;
+    }
+
+    .south_africa__bottom_bg_shape,
+    .south_africa__bottom_shape,
+    .south_africa__top_bg_shape,
+    .south_africa__top_shape {
+        position: absolute;
+        right: -1px;
+        bottom: 0;
+        width: 240px;
+        height: 64px;
+        scale: 1.2;
+        background-color: white;
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Top Red Shape */
+    .south_africa__top_bg_shape,
+    .south_africa__top_shape {
+        transform: scaley(-1);
+        top: 0;
+    }
+
+    .south_africa__top_shape {
+        scale: 1;
+        background-color: #e1392d;
+    }
+
+    /* bottom blue Shape */
+    .south_africa__bottom_shape {
+        scale: 1;
+        background-color: #000c8a;
+    }
+
+    /* #164 */
+    /* ==================================================== */
+    /* ============ Style for South Sudan's Flag ========== */
+    /* ==================================================== */
+
+    .south_sudan {
+        background: linear-gradient(#000 50%, #078930 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .south_sudan::before {
+        position: absolute;
+        content: "";
+        height: 33%;
+        width: 100%;
+        background: #da121a;
+        border: 7px solid white;
+        transform: scalex(10px);
+    }
+
+    .south_sudan::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        border: 100px solid transparent;
+        border-left: 130px solid #0f47af;
+    }
+
+    .south_sudan__star {
+        position: absolute;
+        left: 7%;
+
+        height: 50px;
+        aspect-ratio: 1;
+        background: #fcdd09;
+        rotate: -15deg;
+        z-index: 1;
+
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #165 */
+    /* ==================================================== */
+    /* =============== Style for Spain's Flag ============= */
+    /* ==================================================== */
+
+    .spain {
+        background: linear-gradient(#ad1519 25%, #fabd00 25%, #fabd00 75%, #ad1519 0);
+    }
+
+    .spain>img {
+        position: absolute;
+        left: 21%;
+        top: 30%;
+    }
+
+    /* #166 */
+    /* ==================================================== */
+    /* ============ Style for Sri Lanka's Flag ============ */
+    /* ==================================================== */
+
+    .sri_lanka {
+        padding: 20px;
+        background-color: #ffbe29;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .left__box {
+        width: 78px;
+        height: 100%;
+        background: linear-gradient(to right, #00534e 50%, #eb7400 0);
+    }
+
+    .sri_lanka__logo {
+        width: 180px;
+        height: 160px;
+    }
+
+    /* #167 */
+    /* ==================================================== */
+    /* ============ Style for Sudan's Flag ================ */
+    /* ==================================================== */
+
+    .sudan {
+        background: linear-gradient(#d40732 33%, #fff 33%, #fff 66%, #000 0);
+    }
+
+    .sudan::before {
+        position: absolute;
+        content: "";
+        border: 100px solid transparent;
+        border-left: 100px solid #007325;
+    }
+
+    /* #168 */
+    /* ==================================================== */
+    /* ========= Style for Suriname's Flag ================ */
+    /* ==================================================== */
+
+    .suriname {
+        background: linear-gradient(#347f3e 20%,
+                #fff 20%,
+                #fff 30%,
+                #b6032a 30%,
+                #b6032a 70%,
+                #fff 70%,
+                #fff 80%,
+                #347f3e 0);
+
+        display: grid;
+        place-items: center;
+    }
+
+    .suriname::before {
+        position: absolute;
+        content: "";
+        margin-top: 10px;
+        height: 80px;
+        aspect-ratio: 1;
+        background: #ecc81d;
+
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #169 */
+    /* ==================================================== */
+    /* ============= Style for Sweden's Flag ============== */
+    /* ==================================================== */
+
+    .sweden {
+        background: linear-gradient(#006aa8 80px,
+                #fdcd00 80px,
+                #fdcd00 120px,
+                #006aa8 0);
+    }
+
+    .sweden::before {
+        position: absolute;
+        content: "";
+        left: 95px;
+
+        width: 40px;
+        height: 100%;
+        background-color: #fdcd00;
+    }
+
+    /* #170 */
+    /* ==================================================== */
+    /* =========== Style for Switzerland's Flag =========== */
+    /* ==================================================== */
+
+    .switzerland {
+        background: #fe0000;
+        display: grid;
+        place-items: center;
+    }
+
+    .switzerland::before {
+        position: absolute;
+        content: "";
+
+        width: 125px;
+        aspect-ratio: 1;
+        background-color: white;
+
+        clip-path: polygon(0 35%,
+                35% 35%,
+                35% 0%,
+                65% 0%,
+                65% 35%,
+                100% 35%,
+                100% 65%,
+                65% 65%,
+                65% 100%,
+                35% 100%,
+                35% 65%,
+                0 65%);
+    }
+
+    /* #171 */
+    /* ==================================================== */
+    /* =============== Style for Syria's Flag ============= */
+    /* ==================================================== */
+
+    .syria {
+        background: linear-gradient(#cf0922 33%, #fff 33%, #fff 66%, #000 0);
+        display: grid;
+        place-items: center;
+    }
+
+    .syria__stars_wrapper {
+        display: flex;
+        gap: 40px;
+    }
+
+    .syria__star {
+        height: 50px;
+        aspect-ratio: 1;
+        background: #007b3a;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #172 */
+    /* ==================================================== */
+    /* ============ Style for Tajikistan's Flag =========== */
+    /* ==================================================== */
+
+    .tajikistan {
+        background: linear-gradient(#cc0000 57px, #fff 57px, #fff 143px, #060 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #173 */
+    /* ==================================================== */
+    /* ============ Style for Tanzania's Flag ============= */
+    /* ==================================================== */
+
+    .tanzania {
+        background: linear-gradient(-213.5deg,
+                #17b636 130px,
+                #ffcd00 130px,
+                #ffcd00 140px,
+                #000 140px,
+                #000 190px,
+                #ffcd00 190px,
+                #ffcd00 200px,
+                #00a5df 0);
+    }
+
+    /* #174 */
+    /* ==================================================== */
+    /* ============ Style for Thailand's Flag ============= */
+    /* ==================================================== */
+
+    .thailand {
+        background: linear-gradient(#a51931 33px,
+                #fff 33px,
+                #fff 67px,
+                #2d2a4a 67px,
+                #2d2a4a 133px,
+                #fff 133px,
+                #fff 167px,
+                #a51931 0);
+    }
+
+    /* #175 */
+    /* ==================================================== */
+    /* ============ Style for Togo's Flag ================= */
+    /* ==================================================== */
+
+    .togo {
+        background: repeating-linear-gradient(#006a4e,
+                #006a4e 20%,
+                #ffce00 20%,
+                #ffce00 40%);
+    }
+
+    .togo__red_box {
+        width: 110px;
+        height: 60%;
+        background-color: #d21034;
+        display: grid;
+        place-items: center;
+    }
+
+    .togo__star {
+        height: 70px;
+        aspect-ratio: 1;
+        background: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #176 */
+    /* ==================================================== */
+    /* ============ Style for Tonga's Flag ================ */
+    /* ==================================================== */
+
+    .tonga {
+        background-color: #c10000;
+    }
+
+    .tonga__white_box {
+        width: 146px;
+        height: 90px;
+        background-color: white;
+        display: grid;
+        place-items: center;
+    }
+
+    .tonga__plus {
+        height: 50px;
+        aspect-ratio: 1;
+        background: #c10000;
+        clip-path: polygon(0 35%,
+                35% 35%,
+                35% 0%,
+                65% 0%,
+                65% 35%,
+                100% 35%,
+                100% 65%,
+                65% 65%,
+                65% 100%,
+                35% 100%,
+                35% 65%,
+                0 65%);
+    }
+
+    /* #177 */
+    /* ==================================================== */
+    /* ======= Style for Trinidad and Tobago's Flag ======= */
+    /* ==================================================== */
+
+    .trinidad_and_tobago {
+        background: linear-gradient(45deg,
+                #da1332 140px,
+                #fff 140px,
+                #fff 150px,
+                #000 150px,
+                #000 200px,
+                #fff 200px,
+                #fff 210px,
+                #da1332 0);
+    }
+
+    /* #178 */
+    /* ==================================================== */
+    /* =========== Style for Tunisia's Flag =============== */
+    /* ==================================================== */
+
+    .tunisia {
+        background: radial-gradient(circle at center,
+                #e70013 40px,
+                white 40px,
+                white 50px,
+                #e70013 0);
+    }
+
+    /* Tunisia Center circle Whitle */
+    .tunisia::before {
+        position: absolute;
+        content: "";
+        width: 65px;
+        height: 65px;
+        border-radius: 1in;
+        background-color: white;
+        left: 127px;
+        top: calc(50% - 33.5px);
+    }
+
+    /* Tunisia Star */
+    .tunisia::after {
+        position: absolute;
+        content: "";
+        height: 50px;
+        aspect-ratio: 1;
+        background: #e70013;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+        transform: rotate(-15deg);
+        left: 45%;
+        top: calc(50% - 25px);
+    }
+
+    /* #179 */
+    /* ==================================================== */
+    /* =========== Style for Turkey's Flag =============== */
+    /* ==================================================== */
+
+    .turkey {
+        background: #e30a17;
+    }
+
+    /* Turkey Moon */
+    .turkey::before {
+        position: absolute;
+        content: "";
+        width: 80px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        left: 73px;
+        top: 60px;
+        box-shadow: -13px 0 0 10px white;
+    }
+
+    /* Turkey Star */
+    .turkey::after {
+        content: "";
+        position: absolute;
+        left: 48%;
+        top: calc(50% - 25px);
+
+        height: 50px;
+        aspect-ratio: 1;
+        background: white;
+        transform: rotate(-15deg);
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #180 */
+    /* ==================================================== */
+    /* ========== Style for Turkmenistan's Flag =========== */
+    /* ==================================================== */
+
+    .turkmenistan {
+        background: #00843d;
+    }
+
+    /* Turkmenistan Moon */
+    .turkmenistan::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        left: 40%;
+        top: 15%;
+        box-shadow: 5px 5px 0 2px white;
+    }
+
+    .turkmenistan__vertical__stars {
+        position: absolute;
+        left: 40.21%;
+        right: 56.74%;
+        top: 9.5%;
+        bottom: 86.16%;
+    }
+
+    .turkmenistan__star {
+        height: 10px;
+        aspect-ratio: 1;
+        background: white;
+        transform: rotate(-15deg);
+        margin: 5px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .turkmenistan>.left_star,
+    .turkmenistan>.right_star {
+        position: absolute;
+        left: 36%;
+        top: 19%;
+        transform: rotate(-15deg);
+    }
+
+    .turkmenistan>.right_star {
+        left: 44.5%;
+        top: 15%;
+    }
+
+    /* #181 */
+    /* ==================================================== */
+    /* ============ Style for Tuvalu's Flag =============== */
+    /* ==================================================== */
+
+    .tuvalu {
+        background: #009cde;
+    }
+
+    .tuvalu__left__top {
+        width: 50%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+        background-color: #012169;
+    }
+
+    .tuvalu__plus {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 7px white) drop-shadow(7px 0 white) drop-shadow(-7px 0 white) drop-shadow(0 -7px white);
+    }
+
+    .tuvalu__plus .plus {
+        width: 100%;
+        height: 100%;
+        background-color: #c8102e;
+        clip-path: polygon(0% 40%,
+                43% 40%,
+                43% 0%,
+                58% 0%,
+                58% 40%,
+                100% 40%,
+                100% 60%,
+                58% 60%,
+                58% 100%,
+                43% 100%,
+                43% 60%,
+                0% 60%);
+    }
+
+    .tuvalu__x {
+        position: absolute;
+        inset: 0;
+    }
+
+    .tuvalu__x>.x__strip-1,
+    .tuvalu__x>.x__strip-2 {
+        position: relative;
+        background-color: white;
+        width: 150%;
+        height: 20px;
+        transform: rotate(-32deg) scalex(1.2) translate(-13px, 15px);
+    }
+
+    .tuvalu__x>.x__strip-2 {
+        transform: rotate(32deg) scalex(1.2) translate(13px, 37px);
+    }
+
+    .tuvalu__x>.x__strip-1::before,
+    .tuvalu__x>.x__strip-1::after,
+    .tuvalu__x>.x__strip-2::before,
+    .tuvalu__x>.x__strip-2::after {
+        position: absolute;
+        background-color: #c8102e;
+        content: "";
+        width: 35%;
+        height: 14px;
+    }
+
+    .tuvalu__x>.x__strip-1::before,
+    .tuvalu__x>.x__strip-2::before {
+        top: 3px;
+    }
+
+    .tuvalu__x>.x__strip-1::after,
+    .tuvalu__x>.x__strip-2::after {
+        bottom: 3px;
+        left: 35%;
+    }
+
+    /* Tuvalu Stars */
+    .tuvalu__star {
+        position: absolute;
+        height: 25px;
+        aspect-ratio: 1;
+        background: #fedd00;
+        transform: rotate(-35deg);
+        margin: 5px;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    .tuvalu__star:nth-child(1) {
+        transform: rotate(0deg);
+        left: 87%;
+        top: 26%;
+    }
+
+    .tuvalu__star:nth-child(2) {
+        left: 81%;
+        top: 39%;
+    }
+
+    .tuvalu__star:nth-child(3) {
+        left: 73%;
+        top: 44%;
+    }
+
+    .tuvalu__star:nth-child(4) {
+        transform: rotate(0deg);
+        left: 87%;
+        top: 57%;
+    }
+
+    .tuvalu__star:nth-child(5) {
+        transform: rotate(0deg);
+        left: 80%;
+        top: 66%;
+    }
+
+    .tuvalu__star:nth-child(6) {
+        left: 64%;
+        top: 66%;
+    }
+
+    .tuvalu__star:nth-child(7) {
+        left: 73%;
+        bottom: 8%;
+    }
+
+    .tuvalu__star:nth-child(8) {
+        left: 64%;
+        bottom: 0%;
+    }
+
+    .tuvalu__star:nth-child(9) {
+        transform: rotate(0deg);
+        left: 53%;
+        bottom: -3%;
+    }
+
+    /* #182 */
+    /* ==================================================== */
+    /* ============ Style for Uganda's Flag =============== */
+    /* ==================================================== */
+
+    .uganda {
+        background: repeating-linear-gradient(#000,
+                #000 16.6%,
+                #fbdd00 16.6%,
+                #fbdd00 33.2%,
+                #da0000 33.2%,
+                #da0000 50%);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #183 */
+    /* ==================================================== */
+    /* ============ Style for Ukraine's Flag ============== */
+    /* ==================================================== */
+
+    .ukraine {
+        background: linear-gradient(#105bbc 50%, #ffd600 0);
+    }
+
+    /* #184 */
+    /* ==================================================== */
+    /* ====== Style for United Arab Emirates's Flag ======= */
+    /* ==================================================== */
+
+    .united_arab_emirates {
+        background: linear-gradient(#00742b 33%, #fff 33%, #fff 66%, #000 0);
+    }
+
+    .united_arab_emirates::before {
+        position: absolute;
+        content: "";
+        width: 75px;
+        height: 100%;
+        background-color: #f00;
+    }
+
+    /* #185 */
+    /* ==================================================== */
+    /* ========= Style for United Kingdom's Flag ========== */
+    /* ==================================================== */
+
+    .united_kingdom {
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+        background: #213064;
+    }
+
+    .united_kingdom__plus {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 10px white) drop-shadow(10px 0 white) drop-shadow(-10px 0 white) drop-shadow(0 -10px white);
+    }
+
+    .united_kingdom__plus .plus {
+        width: 100%;
+        height: 100%;
+        background-color: #e51837;
+        clip-path: polygon(0% 43%,
+                45% 43%,
+                45% 0%,
+                55% 0%,
+                55% 43%,
+                100% 43%,
+                100% 58%,
+                55% 58%,
+                55% 100%,
+                45% 100%,
+                45% 58%,
+                0% 58%);
+    }
+
+    .united_kingdom__x {
+        position: absolute;
+        inset: 0;
+    }
+
+    .united_kingdom__x>.x__strip-1,
+    .united_kingdom__x>.x__strip-2 {
+        position: relative;
+        background-color: rgb(255 255 255);
+        height: 32px;
+        transform: rotate(-28deg) scalex(1.3) translate(-30px, 73px);
+    }
+
+    .united_kingdom__x>.x__strip-2 {
+        transform: rotate(28deg) scalex(1.3) translate(13px, 47px);
+    }
+
+    .united_kingdom__x>.x__strip-1::before,
+    .united_kingdom__x>.x__strip-1::after,
+    .united_kingdom__x>.x__strip-2::before,
+    .united_kingdom__x>.x__strip-2::after {
+        position: absolute;
+        background-color: #e51837;
+        content: "";
+        width: 50%;
+        height: 10px;
+    }
+
+    .united_kingdom__x>.x__strip-1::before {
+        bottom: 7px;
+    }
+
+    .united_kingdom__x>.x__strip-1::after {
+        top: 7px;
+        left: 50%;
+    }
+
+    .united_kingdom__x>.x__strip-2::before {
+        bottom: 7px;
+    }
+
+    .united_kingdom__x>.x__strip-2::after {
+        top: 7px;
+        left: 50%;
+    }
+
+    /* #186 */
+    /* ==================================================== */
+    /* ========= Style for United States's Flag =========== */
+    /* ==================================================== */
+
+    .united_states {
+        background: repeating-linear-gradient(#b22234,
+                #b22234 7.7%,
+                #fff 7.7%,
+                #fff 15.4%);
+    }
+
+    .united_states__top_left {
+        background: #3c3b6e;
+        height: 54%;
+        width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .united_states__stars_col {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .united_states__star {
+        height: 10px;
+        aspect-ratio: 1;
+        background: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #187 */
+    /* ==================================================== */
+    /* ========= Style for Uruguay's Flag ================= */
+    /* ==================================================== */
+
+    .uruguay {
+        background: repeating-linear-gradient(#fff,
+                #fff 11.1%,
+                #0038a8 11.1%,
+                #0038a8 22.2%);
+    }
+
+    .uruguay__top_left {
+        width: 111px;
+        aspect-ratio: 1;
+        background-color: white;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #188 */
+    /* ==================================================== */
+    /* ========= Style for Uzbekistan's Flag ============== */
+    /* ==================================================== */
+
+    .uzbekistan {
+        background: linear-gradient(#0099b5 50%, #1eb53a 0);
+    }
+
+    /* Middle white strip */
+    .uzbekistan::before {
+        position: absolute;
+        content: "";
+        height: 64px;
+        width: 100%;
+        background-color: white;
+        border: solid #ce1126;
+        border-width: 4px 0;
+        top: calc(50% - 64px / 2);
+    }
+
+    /* top white moon */
+    .uzbekistan::after {
+        position: absolute;
+        content: "";
+        left: 10%;
+        top: 4%;
+
+        height: 48px;
+        aspect-ratio: 1;
+        border-radius: 1in;
+        box-shadow: -8px 0 white;
+    }
+
+    .uzbekistan__star_wrap {
+        position: absolute;
+        left: 55px;
+        top: 4%;
+
+        display: flex;
+        justify-content: space-around;
+
+        height: 50px;
+        width: 87px;
+    }
+
+    .uzbekistan__star_col {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .uzbekistan__star {
+        height: 10px;
+        aspect-ratio: 1;
+        background: white;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #189 */
+    /* ==================================================== */
+    /* ========= Style for Vanuatu's Flag ================= */
+    /* ==================================================== */
+
+    .vanuatu {
+        background: linear-gradient(#d21034 50%, #009543 0);
+    }
+
+    /* Outer Black Triangle */
+    .vanuatu::before {
+        position: absolute;
+        content: "";
+        border: 100px solid transparent;
+        border-left: 170px solid black;
+    }
+
+    /* Inner Yellow Triangle */
+    .vanuatu::after {
+        position: absolute;
+        content: "";
+        border: 85px solid transparent;
+        border-left: 145px solid #fdce12;
+        top: 15px;
+    }
+
+    /* Inner Black Triangle */
+
+    .vanuatu__black_triangle {
+        position: absolute;
+        border: 70px solid transparent;
+        border-left: 120px solid black;
+        top: 30px;
+        z-index: 1;
+    }
+
+    .vanuatu>img {
+        position: absolute;
+        left: 6%;
+        top: 37%;
+        z-index: 1;
+    }
+
+    .vanuatu__center_strip {
+        height: 40px;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        background-color: #fdce12;
+        border: solid black;
+        border-width: 13px 0;
+        top: calc(50% - 20px);
+    }
+
+    /* #190 */
+    /* ==================================================== */
+    /* ========= Style for Vatican City's Flag============= */
+    /* ==================================================== */
+
+    .vatican_city {
+        background: linear-gradient(to right, #ffe000 50%, #fff 0);
+    }
+
+    .vatican_city>img {
+        position: absolute;
+        right: 50px;
+        top: calc(50% - 43px);
+    }
+
+    /* #191 */
+    /* ==================================================== */
+    /* ============= Style Venezuela's Flag =============== */
+    /* ==================================================== */
+
+    .venezuela {
+        background: linear-gradient(#ffcd00 33%, #011f7f 33%, #011f7f 66%, #d10c27 0);
+        display: grid;
+        place-items: center;
+    }
+
+    /* #192 */
+    /* ==================================================== */
+    /* ============= Style Vietnam's Flag ================ */
+    /* ==================================================== */
+
+    .vietnam {
+        background-color: #db2017;
+        display: grid;
+        place-items: center;
+    }
+
+    .vietnam::before {
+        position: absolute;
+        content: "";
+        height: 110px;
+        aspect-ratio: 1;
+        background: #ff0;
+        clip-path: polygon(50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%);
+    }
+
+    /* #193 */
+    /* ==================================================== */
+    /* ================ Style Yemen's Flag ================ */
+    /* ==================================================== */
+
+    .yemen {
+        background: linear-gradient(#cf0922 33%, #fff 33%, #fff 66%, #000 0);
+    }
+
+    /* #194 */
+    /* ==================================================== */
+    /* ============= Style Zambia's Flag ================== */
+    /* ==================================================== */
+
+    .zambia {
+        background-color: #198a00;
+    }
+
+    .zambia::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        width: 108px;
+        height: 130px;
+        background: linear-gradient(to right,
+                #de2010 36px,
+                #000 36px,
+                #000 72px,
+                #ef7d00 0);
+    }
+
+    .zambia>img {
+        position: absolute;
+        top: 9%;
+        right: 2.14%;
+    }
+
+    /* #195 */
+    /* ==================================================== */
+    /* ============= Style Zimbabwe's Flag ================ */
+    /* ==================================================== */
+
+    .zimbabwe {
+        background: linear-gradient(#006400 14.28%,
+                #ffd200 14.28%,
+                #ffd200 28.56%,
+                #d40000 28.56%,
+                #d40000 42.84%,
+                #000 42.84%,
+                #000 57.12%,
+                #d40000 57.12%,
+                #d40000 71.4%,
+                #ffd200 71.4%,
+                #ffd200 85.68%,
+                #006400 0);
+    }
+
+    .zimbabwe::before,
+    .zimbabwe::after {
+        position: absolute;
+        content: "";
+        border: 100px solid transparent;
+        border-left-color: black;
+        left: 7px;
+        box-shadow: -10px 0 black;
+        /* After pusing a little bit left then it had a small gap in the bottom and top left corner "remove to see the difference"*/
+    }
+
+    .zimbabwe::after {
+        left: 0;
+        border-left-color: white;
+    }
+
+    .zimbabwe>img {
+        position: absolute;
+        left: 5px;
+        top: 64px;
+        z-index: 1;
+    }
+
+    /* #196 */
+    /* ==================================================== */
+    /* ============= Styles for Taiwan's Flag ============= */
+    /* ==================================================== */
+
+    .taiwan {
+        background: #fe0000;
+    }
+
+    .taiwan::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        background: #000095;
+        width: 50%;
+        height: 50%;
+    }
+</style>
+<body>
+
+    <!-- Afghanistan's Flag -->
+    <div class="container" data-name="#1 - Afghanistan">
+        <div class="flag afghanistan">
+            <img src="https://imgur.com/wS3Mgac.png" class="afghanistan__logo" alt="afghanistan" />
+        </div>
+    </div>
+
+    <!-- Albania's Flag -->
+    <div class="container" data-name="#2 - Albania">
+        <div class="flag albania">
+            <img src="https://imgur.com/ddXXb8M.png" class="albania__logo" alt="albania" />
+        </div>
+    </div>
+
+    <!-- Algeria's Flag -->
+    <div class="container" data-name="#3 - Algeria">
+        <div class="flag algeria">
+            <div class="algeria__moon"></div>
+            <div class="algeria__star"></div>
+        </div>
+    </div>
+
+    <!-- Andorra's Flag -->
+    <div class="container" data-name="#4 - Andorra">
+        <div class="flag andorra">
+            <img src="https://imgur.com/GWywqZg.png" class="andorra__logo" alt="andorra" />
+        </div>
+    </div>
+
+    <!-- Angola's Flag -->
+    <div class="container" data-name="#5 - Angola">
+        <div class="flag angola">
+            <img src="https://imgur.com/zJYRW5J.png" class="angola__logo" alt="angola" />
+        </div>
+    </div>
+
+    <!-- Antigua and Barbuda's Flag -->
+    <div class="container" data-name="#6 - Antigua and Barbuda">
+        <div class="flag antigua">
+            <div class="antigua__black"></div>
+            <div class="antigua__blue"></div>
+            <div class="antigua__white"></div>
+
+            <div class="antigua__triangle"></div>
+            <div class="antigua__triangle right"></div>
+            <img src="https://imgur.com/i8BstuY.png" class="antigua__logo" alt="antigua" />
+        </div>
+    </div>
+
+    <!-- Argentina's Flag -->
+    <div class="container" data-name="#7 - Argentina">
+        <div class="flag argentina">
+            <img src="https://imgur.com/JfNCX8z.png" class="argentina__logo" alt="argentina" />
+        </div>
+    </div>
+
+    <!-- Armenia's Flag -->
+    <div class="container" data-name="#8 - Armenia">
+        <div class="flag armenia"></div>
+    </div>
+
+    <!-- Australia's Flag -->
+    <div class="container" data-name="#9 - Australia">
+        <div class="flag australia">
+            <div class="australia__left__top">
+                <div class="australia__plus">
+                    <div class="plus"></div>
+                </div>
+                <div class="australia__x">
+                    <div class="x__strip-1"></div>
+                    <div class="x__strip-2"></div>
+                </div>
+            </div>
+
+            <img src="https://imgur.com/2X2snYP.png" width="215" alt="" />
+        </div>
+    </div>
+
+    <!-- Austria's Flag -->
+    <div class="container" data-name="#10 - Austria">
+        <div class="flag austria"></div>
+    </div>
+
+    <!-- Azerbaijan's Flag -->
+    <div class="container" data-name="#11 - Azerbaijan">
+        <div class="flag azerbaijan">
+            <img class="azerbaijan__logo" src="https://imgur.com/BNJzPa2.png" alt="" />
+        </div>
+    </div>
+
+    <!-- Bahamas's Flag -->
+    <div class="container" data-name="#12 - Bahamas">
+        <div class="flag bahamas">
+            <div class="bahamas__triangle"></div>
+        </div>
+    </div>
+
+    <!-- Bahrain's Flag -->
+    <div class="container" data-name="#13 - Bahrain">
+        <div class="flag bahrain">
+            <div class="bahrain__triangle"></div>
+            <div class="bahrain__triangle"></div>
+            <div class="bahrain__triangle"></div>
+            <div class="bahrain__triangle"></div>
+            <div class="bahrain__triangle"></div>
+        </div>
+    </div>
+
+    <!-- Bangladesh's Flag -->
+    <div class="container" data-name="#14 - Bangladesh">
+        <div class="flag bangladesh">
+            <div class="bangladesh__circle"></div>
+        </div>
+    </div>
+
+    <!-- Barbados's Flag -->
+    <div class="container" data-name="#15 - Barbados">
+        <div class="flag barbados">
+            <img class="barbados__logo" src="https://imgur.com/slPEfMg.png" alt="" />
+        </div>
+    </div>
+
+    <!-- Belarus's Flag -->
+    <div class="container" data-name="#16 - Belarus">
+        <div class="flag belarus">
+            <img class="belarus__logo" src="https://imgur.com/RpVNYAD.png" alt="" />
+        </div>
+    </div>
+
+    <!-- Belgium's Flag -->
+    <div class="container" data-name="#17 - Belgium">
+        <div class="flag belgium"></div>
+    </div>
+
+    <!-- Belize's Flag -->
+    <div class="container" data-name="#18 - Belize">
+        <div class="flag belize">
+            <div class="belize__blue"></div>
+            <img src="https://imgur.com/cef92VN.png" alt="" class="belize__logo" />
+        </div>
+    </div>
+
+    <!-- Benin's Flag -->
+    <div class="container" data-name="#19 - Benin">
+        <div class="flag benin"></div>
+    </div>
+
+    <!-- Bhutan's Flag -->
+    <div class="container" data-name="#20 - Bhutan">
+        <div class="flag bhutan">
+            <img src="https://imgur.com/mdSyebk.png" alt="" class="bhutan__logo" />
+        </div>
+    </div>
+
+    <!-- Bolivia's Flag -->
+    <div class="container" data-name="#21 - Bolivia">
+        <div class="flag bolivia">
+            <img src="https://imgur.com/INaZHp0.png" alt="" class="bolivia__logo" />
+        </div>
+    </div>
+
+    <!-- Bosnia and Herzegovina's Flag -->
+    <div class="container" data-name="#22 - Bosnia and Herzegovina">
+        <div class="flag bosnia">
+            <div class="bosnia__triangle"></div>
+            <div class="bosnia__star__wrapper">
+                <div class="star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botswana's Flag -->
+    <div class="container" data-name="#23 - Botswana">
+        <div class="flag botswana"></div>
+    </div>
+
+    <!-- Brazil's Flag -->
+    <div class="container" data-name="#24 - Brazil">
+        <div class="flag brazil">
+            <div class="brazil__diamond"></div>
+            <img src="https://imgur.com/IAzj891.png" alt="" class="brazil__logo" />
+        </div>
+    </div>
+
+    <!-- Brunei's Flag -->
+    <div class="container" data-name="#25 - Brunei">
+        <div class="flag brunei">
+            <div class="brunei__black"></div>
+            <img src="https://imgur.com/pjuyDpw.png" alt="" class="brunei__logo" />
+        </div>
+    </div>
+
+    <!-- Bulgaria's Flag -->
+
+    <div class="container" data-name="#26 - Bulgaria">
+        <div class="flag bulgaria"></div>
+    </div>
+
+    <!-- Burkina Faso's Flag -->
+    <div class="container" data-name="#27 - Burkina Faso">
+        <div class="flag burkina">
+            <div class="burkina__star"></div>
+        </div>
+    </div>
+
+    <!-- Burundi's Flag -->
+    <div class="container" data-name="#28 - Burundi">
+        <div class="flag burundi">
+            <div class="burundi__border"></div>
+            <img src="https://imgur.com/QcbhN4m.png" alt="" class="burundi__logo" />
+        </div>
+    </div>
+
+    <!-- Cambodia's Flag -->
+    <div class="container" data-name="#29 - Cambodia">
+        <div class="flag cambodia">
+            <img src="https://imgur.com/UByHOmw.png" alt="" height="80" />
+        </div>
+    </div>
+
+    <!-- Cameroon's Flag -->
+    <div class="container" data-name="#30 - Cameroon">
+        <div class="flag cameroon">
+            <div class="cameroon__star"></div>
+        </div>
+    </div>
+
+    <!-- Canada's Flag -->
+    <div class="container" data-name="#31 - Canada">
+        <div class="flag canada">
+            <img src="https://imgur.com/ACKqo2r.png" alt="" class="canada__logo" />
+        </div>
+    </div>
+
+    <!-- Cape Verde's Flag -->
+    <div class="container" data-name="#32 - Cape Verde">
+        <div class="flag cape_verde">
+            <img src="https://imgur.com/hlJEzak.png" alt="" class="cape_verde__logo" />
+        </div>
+    </div>
+
+    <!-- Central African's Flag -->
+    <div class="container" data-name="#33 - Central African">
+        <div class="flag central_african"></div>
+    </div>
+
+    <!-- Chad's Flag -->
+    <div class="container" data-name="#34 - Chad">
+        <div class="flag chad"></div>
+    </div>
+
+    <!-- Chile's Flag -->
+    <div class="container" data-name="#35 - Chile">
+        <div class="flag chile"></div>
+    </div>
+
+    <!-- China's Flag -->
+    <div class="container" data-name="#36 - China">
+        <div class="flag china">
+            <div class="china__star"></div>
+            <div class="china__small_star"></div>
+            <div class="china__small_star"></div>
+            <div class="china__small_star"></div>
+            <div class="china__small_star"></div>
+        </div>
+    </div>
+
+    <!-- Colombia's Flag -->
+    <div class="container" data-name="#37 - Colombia">
+        <div class="flag colombia"></div>
+    </div>
+
+    <!-- Comoros's Flag -->
+    <div class="container" data-name="#38 - Comoros">
+        <div class="flag comorosa">
+            <div class="comorosa__triangle"></div>
+            <div class="comorosa__moon">
+                <div class="comorosa__star"></div>
+                <div class="comorosa__star"></div>
+                <div class="comorosa__star"></div>
+                <div class="comorosa__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Democratic Republic of the Congo's Flag -->
+    <div class="container" data-name="#39 - Democratic Republic of the Congo">
+        <div class="flag democratic_republic_of_the_congo"></div>
+    </div>
+
+    <!-- Republic of the Congo's Flag -->
+    <div class="container" data-name="#40 - Republic of the Congo">
+        <div class="flag republic_of_the_congo"></div>
+    </div>
+
+    <!-- Costa Rica's Flag -->
+    <div class="container" data-name="#41 - Costa Rica">
+        <div class="flag costa_rica"></div>
+    </div>
+
+    <!-- Croatia's Flag -->
+    <div class="container" data-name="#42 - Croatia">
+        <div class="flag croatia">
+            <img src="https://imgur.com/QnZcQaW.png" alt="" class="croatia__logo" />
+        </div>
+    </div>
+
+    <!-- Cuban's Flag -->
+    <div class="container" data-name="#43 - Cuban">
+        <div class="flag cuban"></div>
+    </div>
+
+    <!-- Cyprus's Flag -->
+    <div class="container" data-name="#44 - Cyprus">
+        <div class="flag cyprus">
+            <img src="https://imgur.com/1bMpG9Y.png" height="134" alt="" />
+        </div>
+    </div>
+
+    <!-- Czechia's Flag -->
+    <div class="container" data-name="#45 - Czechia">
+        <div class="flag czechia"></div>
+    </div>
+
+    <!-- Denmark's Flag -->
+    <div class="container" data-name="#46 - Denmark">
+        <div class="flag denmark"></div>
+    </div>
+
+    <!-- Djibouti's Flag -->
+    <div class="container" data-name="#47 - Djibouti">
+        <div class="flag djibouti"></div>
+    </div>
+
+    <!-- Dominica's Flag -->
+    <div class="container" data-name="#48 - Dominica">
+        <div class="flag dominica">
+            <div class="dominica__horizontal_strip"></div>
+            <div class="dominica__vertical__strip"></div>
+            <img src="https://imgur.com/5ZVh063.png" width="100" alt="" />
+        </div>
+    </div>
+
+    <!-- Dominican's Flag -->
+    <div class="container" data-name="#49 - Dominican">
+        <div class="flag dominican">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+            <img src="https://imgur.com/oGnIkD1.png" height="50" alt="" class="dominican__logo" />
+        </div>
+    </div>
+
+    <!-- East Timor's Flag -->
+    <div class="container" data-name="#50 - East Timor">
+        <div class="flag east_timor">
+            <div class="east_timor__star"></div>
+        </div>
+    </div>
+
+    <!-- Ecuador's Flag -->
+    <div class="container" data-name="#51 - Ecuador">
+        <div class="flag ecuador">
+            <img src="https://imgur.com/Dqir7ZS.png" height="114" alt="" />
+        </div>
+    </div>
+
+    <!-- Egypt's Flag -->
+    <div class="container" data-name="#52 - Egypt">
+        <div class="flag egypt">
+            <img src="https://imgur.com/gtxNVmV.png" height="97" alt="" />
+        </div>
+    </div>
+
+    <!-- El Salvador's Flag -->
+    <div class="container" data-name="#53 - El Salvador">
+        <div class="flag el_salvador">
+            <img src="https://imgur.com/nYl3wid.png" height="64" alt="" />
+        </div>
+    </div>
+
+    <!-- Equatorial Guinea's Flag -->
+    <div class="container" data-name="#54 - Equatorial Guinea">
+        <div class="flag equatorial_guinea">
+            <img src="https://imgur.com/L1zhWHU.png" height="59" alt="" />
+        </div>
+    </div>
+
+    <!-- Eritrea's Flag -->
+    <div class="container" data-name="#55 - Eritrea">
+        <div class="flag eritrea">
+            <img class="eritrea__logo" src="https://imgur.com/JyoAAZE.png" height="78" alt="" />
+        </div>
+    </div>
+
+    <!-- Estonia's Flag -->
+    <div class="container" data-name="#56 - Estonia">
+        <div class="flag estonia"></div>
+    </div>
+
+    <!-- Eswatini's Flag -->
+    <div class="container" data-name="#57 - Eswatini">
+        <div class="flag eswatini">
+            <img class="eswatini__logo" src="https://imgur.com/H8ZJZYm.png" height="85" alt="" />
+        </div>
+    </div>
+
+    <!-- Ethiopia's Flag -->
+    <div class="container" data-name="#58 - Ethiopia">
+        <div class="flag ethiopia">
+            <img src="https://imgur.com/yERnWjg.png" height="89" alt="" />
+        </div>
+    </div>
+
+    <!-- Fiji's Flag -->
+    <div class="container" data-name="#59 - Fiji">
+        <div class="flag fiji">
+            <div class="fiji__left__top">
+                <div class="fiji__plus">
+                    <div class="plus"></div>
+                </div>
+                <div class="fiji__x">
+                    <div class="x__strip-1"></div>
+                    <div class="x__strip-2"></div>
+                </div>
+            </div>
+            <img src="https://imgur.com/U8eeeO9.png" class="fiji__logo" width="70" alt="" />
+        </div>
+    </div>
+
+    <!-- Finland's Flag -->
+    <div class="container" data-name="#60 - Finland">
+        <div class="flag finland"></div>
+    </div>
+
+    <!-- France's Flag -->
+    <div class="container" data-name="#61 - France">
+        <div class="flag france"></div>
+    </div>
+
+    <!-- Gabon's Flag -->
+    <div class="container" data-name="#62 - Gabon">
+        <div class="flag gabon"></div>
+    </div>
+
+    <!-- Gambia's Flag -->
+    <div class="container" data-name="#63 - Gambia">
+        <div class="flag gambia"></div>
+    </div>
+
+    <!-- Georgia's Flag -->
+    <div class="container" data-name="#64 - Georgia">
+        <div class="flag georgia">
+            <div class="georgia__rectangle">
+                <img src="https://imgur.com/tzwaQsL.png" width="40" alt="" />
+            </div>
+            <div class="georgia__rectangle">
+                <img src="https://imgur.com/tzwaQsL.png" width="40" alt="" />
+            </div>
+            <div class="georgia__rectangle">
+                <img src="https://imgur.com/tzwaQsL.png" width="40" alt="" />
+            </div>
+            <div class="georgia__rectangle">
+                <img src="https://imgur.com/tzwaQsL.png" width="40" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Germany's Flag -->
+    <div class="container" data-name="#65 - Germany">
+        <div class="flag germany"></div>
+    </div>
+
+    <!-- Ghana's Flag -->
+    <div class="container" data-name="#66 - Ghana">
+        <div class="flag ghana"></div>
+    </div>
+
+    <!-- Greece's Flag -->
+    <div class="container" data-name="#67 - Greece">
+        <div class="flag greece">
+            <div class="greece__top_left">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grenada's Flag -->
+    <div class="container" data-name="#68 - Grenada">
+        <div class="flag grenada">
+            <div class="grenada__top_stars">
+                <div class="grenada__star"></div>
+                <div class="grenada__star"></div>
+                <div class="grenada__star"></div>
+            </div>
+            <div class="grenada__center_circle">
+                <div class="grenada__star"></div>
+            </div>
+            <div class="grenada__bottom_stars">
+                <div class="grenada__star"></div>
+                <div class="grenada__star"></div>
+                <div class="grenada__star"></div>
+            </div>
+
+            <img src="https://imgur.com/Vxl8Xpv.png" height="36" alt="" class="grenada__logo" />
+        </div>
+    </div>
+
+    <!-- Guatemala's Flag -->
+    <div class="container" data-name="#69 - Guatemala">
+        <div class="flag guatemala">
+            <img src="https://imgur.com/rBpOmN9.png" height="61" alt="" class="guatemala__logo" />
+        </div>
+    </div>
+
+    <!-- Guinea's Flag -->
+    <div class="container" data-name="#70 - Guinea">
+        <div class="flag guinea"></div>
+    </div>
+
+    <!-- Guinea-Bissau's Flag -->
+    <div class="container" data-name="#71 - Guinea-Bissau">
+        <div class="flag guinea_bissau">
+            <div class="guinea_bissau__left_red">
+                <div class="guinea_bissau__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guyana's Flag -->
+    <div class="container" data-name="#72 - Guyana">
+        <div class="flag guyana">
+            <div class="guyana__white"></div>
+            <div class="guyana__yellow"></div>
+            <div class="guyana__black"></div>
+            <div class="guyana__red"></div>
+        </div>
+    </div>
+
+    <!-- Haiti's Flag -->
+    <div class="container" data-name="#73 - Haiti">
+        <div class="flag haiti">
+            <img src="https://imgur.com/P4ujsx5.png" height="50" alt="" />
+        </div>
+    </div>
+
+    <!-- Honduras's Flag -->
+    <div class="container" data-name="#74 - Honduras">
+        <div class="flag honduras">
+            <div class="honduras__left_stars">
+                <div class="honduras__star"></div>
+                <div class="honduras__star"></div>
+            </div>
+            <div class="honduras__star"></div>
+        </div>
+    </div>
+
+    <!-- Hungary's Flag -->
+    <div class="container" data-name="#75 - Hungary">
+        <div class="flag hungary"></div>
+    </div>
+
+    <!-- Iceland's Flag -->
+    <div class="container" data-name="#76 - Iceland">
+        <div class="flag iceland"></div>
+    </div>
+
+    <!-- India's Flag -->
+    <div class="container" data-name="#77 - India">
+        <div class="flag india">
+            <img src="https://imgur.com/nm8Qq5m.png" width="55" alt="" class="indian__wheel" />
+        </div>
+    </div>
+
+    <!-- Indonesia's Flag -->
+    <div class="container" data-name="#78 - Indonesia">
+        <div class="flag indonesia"></div>
+    </div>
+
+    <!-- Iran's Flag -->
+    <div class="container" data-name="#79 - Iran">
+        <div class="flag iran">
+            <img src="https://imgur.com/VZqTaOh.png" width="50" alt="" />
+
+            <img style="margin-top: 1px" src="https://imgur.com/EMDML3Z.png" height="84" alt="" />
+        </div>
+    </div>
+
+    <!-- Iraq's Flag -->
+    <div class="container" data-name="#80 - Iraq">
+        <div class="flag iraq">
+            <img src="https://imgur.com/LsiK9dp.png" height="40" alt="" />
+        </div>
+    </div>
+
+    <!-- Ireland's Flag -->
+    <div class="container" data-name="#81 - Ireland">
+        <div class="flag ireland"></div>
+    </div>
+
+    <!-- Israel's Flag -->
+    <div class="container" data-name="#82 - Israel">
+        <div class="flag israel">
+            <img src="https://imgur.com/Jm0xT7d.png" height="72" alt="" />
+        </div>
+    </div>
+
+    <!-- Italy's Flag -->
+    <div class="container" data-name="#83 - Italy">
+        <div class="flag italy"></div>
+    </div>
+
+    <!-- Ivory Coast's Flag -->
+    <div class="container" data-name="#84 - Ivory Coast">
+        <div class="flag ivory_coast"></div>
+    </div>
+
+    <!-- Jamaica's Flag -->
+    <div class="container" data-name="#85 - Jamaica">
+        <div class="flag jamaica">
+            <div class="jamaica__left_triangle"></div>
+            <div class="jamaica__right_triangle"></div>
+        </div>
+    </div>
+
+    <!-- Japan's Flag -->
+    <div class="container" data-name="#86 - Japan">
+        <div class="flag japan"></div>
+    </div>
+
+    <!-- Jordan's Flag -->
+    <div class="container" data-name="#87 - Jordan">
+        <div class="flag jordan">
+            <img src="https://imgur.com/xvpDXRC.png" height="27" alt="" />
+        </div>
+    </div>
+
+    <!-- Kazakhstan's Flag -->
+    <div class="container" data-name="#88 - Kazakhstan">
+        <div class="flag kazakhstan">
+            <img height="140" src="https://imgur.com/kRMTKRv.png" alt="" class="kazakhstan__center_logo" />
+            <img height="178" src="https://imgur.com/ZrWtDUS.png" alt="" class="kazakhstan__left_logo" />
+        </div>
+    </div>
+
+    <!-- Kenya's Flag -->
+    <div class="container" data-name="#89 - Kenya">
+        <div class="flag kenya">
+            <div style="background: #000"></div>
+            <div style="background: #bb0000"></div>
+            <div style="background: #006600"></div>
+
+            <img src="https://imgur.com/N3Tygit.png" height="133" alt="" class="kenya__logo" />
+        </div>
+    </div>
+
+    <!-- Kiribati's Flag -->
+    <div class="container" data-name="#90 - Kiribati">
+        <div class="flag kiribati">
+            <img src="https://imgur.com/4dKGZC1.png" alt="" class="kiribati__sun" />
+
+            <img src="https://imgur.com/UevumJS.png" height="28" alt="" class="kiribati__bird" />
+            <div class="kiribati__blue_bottom">
+                <img src="https://imgur.com/TTsCpds.png" alt="" class="kiribati__wave" />
+            </div>
+        </div>
+    </div>
+
+    <!-- North Korea's Flag -->
+    <div class="container" data-name="#91 - North Korea">
+        <div class="flag north_korea">
+            <div style="background: #024fa2; height: 33px"></div>
+            <div style="background: #ed1c27; height: 122px">
+                <div class="north_korea__circle">
+                    <div class="north_korea__star"></div>
+                </div>
+            </div>
+            <div style="background: #024fa2; height: 33px"></div>
+        </div>
+    </div>
+
+    <!-- South Korea's Flag -->
+    <div class="container" data-name="#92 - South Korea">
+        <div class="flag south_korea">
+            <div class="south_korea__center_circle"></div>
+
+            <div class="south_korea__strips_1">
+                <div class="strips">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="strips">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="south_korea__strips_2">
+                <div class="strips">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="strips">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <p class="south_korea__invisible_brick"></p>
+            <p class="south_korea__invisible_brick"></p>
+        </div>
+    </div>
+
+    <!-- Kuwait's Flag -->
+    <div class="container" data-name="#93 - Kuwait">
+        <div class="flag kuwait"></div>
+    </div>
+
+    <!-- Kyrgyzstan's Flag -->
+    <div class="container" data-name="#94 - Kyrgyzstan">
+        <div class="flag kyrgyzstan">
+            <img src="https://imgur.com/O8cNeFf.png" height="120" alt="" />
+        </div>
+    </div>
+
+    <!-- Laos's Flag -->
+    <div class="container" data-name="#95 - Laos">
+        <div class="flag laos"></div>
+    </div>
+
+    <!-- Latvia's Flag -->
+    <div class="container" data-name="#96 - Latvia">
+        <div class="flag latvia"></div>
+    </div>
+
+    <!-- Lebanon's Flag -->
+    <div class="container" data-name="#97 - Lebanon">
+        <div class="flag lebanon">
+            <img src="https://imgur.com/Y9j8wlq.png" height="100" alt="" />
+        </div>
+    </div>
+
+    <!-- Lesotho's Flag -->
+    <div class="container" data-name="#98 - Lesotho">
+        <div class="flag lesotho">
+            <img src="https://imgur.com/IA4tL3T.png" height="75" alt="" />
+        </div>
+    </div>
+
+    <!-- Liberia's Flag -->
+    <div class="container" data-name="#99 - Liberia">
+        <div class="flag liberia"></div>
+    </div>
+
+    <!-- Libya's Flag -->
+    <div class="container" data-name="#100 - Libya">
+        <div class="flag libya"></div>
+    </div>
+
+    <!-- Liechtenstein's Flag -->
+    <div class="container" data-name="#101 - Liechtenstein">
+        <div class="flag liechtenstein">
+            <img src="https://imgur.com/GCzRGPT.png" height="60" alt="" />
+        </div>
+    </div>
+
+    <!-- Lithuania's Flag -->
+    <div class="container" data-name="#102 - Lithuania">
+        <div class="flag lithuania"></div>
+    </div>
+
+    <!-- Luxembourg's Flag -->
+    <div class="container" data-name="#103 - Luxembourg">
+        <div class="flag luxembourg"></div>
+    </div>
+
+    <!-- Madagascar's Flag -->
+    <div class="container" data-name="#104 - Madagascar">
+        <div class="flag madagascar"></div>
+    </div>
+
+    <!-- Malawi's Flag -->
+    <div class="container" data-name="#105 - Malawi">
+        <div class="flag malawi">
+            <img src="https://imgur.com/sHlwN4v.png" height="50" alt="" />
+        </div>
+    </div>
+
+    <!-- Malaysia's Flag -->
+    <div class="container" data-name="#106 - Malaysia">
+        <div class="flag malaysia">
+            <div class="malaysia__top_left">
+                <img src="https://imgur.com/DkWTdK6.png" height="64" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Maldives's Flag -->
+    <div class="container" data-name="#107 - Maldives">
+        <div class="flag maldives"></div>
+    </div>
+
+    <!-- Mali's Flag -->
+    <div class="container" data-name="#108 - Mali">
+        <div class="flag mali"></div>
+    </div>
+
+    <!-- Malta's Flag -->
+    <div class="container" data-name="#109 - Malta">
+        <div class="flag malta">
+            <img src="https://imgur.com/tlGobeh.png" height="54" alt="" />
+        </div>
+    </div>
+
+    <!-- Marshall Islands's Flag -->
+    <div class="container" data-name="#110 - Marshall Islands">
+        <div class="flag marshall_islands">
+            <div class="marshall_islands__yellow"></div>
+            <div class="marshall_islands__white"></div>
+            <div class="marshall_islands__bottom_blue"></div>
+            <img src="https://imgur.com/YMkvsRV.png" width="120" alt="" />
+        </div>
+    </div>
+
+    <!-- Mauritania's Flag -->
+    <div class="container" data-name="#111 - Mauritania">
+        <div class="flag mauritania"></div>
+    </div>
+
+    <!-- Mauritius's Flag -->
+    <div class="container" data-name="#112 - Mauritius">
+        <div class="flag mauritius"></div>
+    </div>
+
+    <!-- Mexico's Flag -->
+    <div class="container" data-name="#113 - Mexico">
+        <div class="flag mexico">
+            <img src="https://imgur.com/6YAiFxu.png" height="80" alt="" />
+        </div>
+    </div>
+
+    <!-- Micronesia's Flag -->
+    <div class="container" data-name="#114 - Micronesia">
+        <div class="flag micronesia">
+            <div class="micronesia__grid">
+                <div class="micronesia__grid_row">
+                    <div class="micronesia__star"></div>
+                </div>
+                <div class="micronesia__grid_row">
+                    <div class="micronesia__star"></div>
+                    <div class="micronesia__star"></div>
+                </div>
+                <div class="micronesia__grid_row">
+                    <div class="micronesia__star"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Moldova's Flag -->
+    <div class="container" data-name="#115 - Moldova">
+        <div class="flag moldova">
+            <img src="https://imgur.com/hvZQWx8.png" height="100" alt="" />
+        </div>
+    </div>
+
+    <!-- Monaco's Flag -->
+    <div class="container" data-name="#116 - Monaco">
+        <div class="flag monaco"></div>
+    </div>
+
+    <!-- Mongolia's Flag -->
+    <div class="container" data-name="#117 - Mongolia">
+        <div class="flag mongolia">
+            <img src="https://imgur.com/uugRP7K.png" height="150" alt="" />
+        </div>
+    </div>
+
+    <!-- Montenegro's Flag -->
+    <div class="container" data-name="#118 - Montenegro">
+        <div class="flag montenegro">
+            <img src="https://imgur.com/ioH7KHX.png" height="130" alt="" />
+        </div>
+    </div>
+
+    <!-- Morocco's Flag -->
+    <div class="container" data-name="#119 - Morocco">
+        <div class="flag morocco">
+            <img src="https://imgur.com/WWQl2y6.png" height="75" alt="" />
+        </div>
+    </div>
+
+    <!-- Mozambique's Flag -->
+    <div class="container" data-name="#120 - Mozambique">
+        <div class="flag mozambique">
+            <img src="https://imgur.com/HeZFDUz.png" height="75" alt="" />
+        </div>
+    </div>
+
+    <!-- Myanmar's Flag -->
+    <div class="container" data-name="#121 - Myanmar">
+        <div class="flag myanmar"></div>
+    </div>
+
+    <!-- Namibia's Flag -->
+    <div class="container" data-name="#122 - Namibia">
+        <div class="flag namibia">
+            <img src="https://imgur.com/z8ZgB3P.png" height="66" alt="" />
+        </div>
+    </div>
+
+    <!-- Nauru's Flag -->
+    <div class="container" data-name="#123 - Nauru">
+        <div class="flag nauru">
+            <img src="https://imgur.com/NYD5Zyu.png" height="66" alt="" />
+        </div>
+    </div>
+
+    <!-- Nepal's Flag -->
+    <div class="container" data-name="#124 - Nepal">
+        <div class="flag nepal">
+            <div class="nepal__bg_blue">
+                <div class="nepal__bg_red"></div>
+            </div>
+
+            <!-- I have used two strip to make the blue border -->
+            <div class="nepal__blue_strip"></div>
+            <div class="nepal__blue_strip"></div>
+
+            <img src="https://imgur.com/llSwP7s.png" height="33" alt="" class="nepal__top_image" />
+            <img src="https://imgur.com/J9OS3X9.png" height="61" alt="" class="nepal__bottom_image" />
+        </div>
+    </div>
+
+    <!-- Netherlands's Flag -->
+    <div class="container" data-name="#125 - Netherlands">
+        <div class="flag netherlands"></div>
+    </div>
+
+    <!-- New Zealand's Flag -->
+    <div class="container" data-name="#126 - New Zealand">
+        <div class="flag new_zealand">
+            <div class="new_zealand__left__top">
+                <div class="new_zealand__plus">
+                    <div class="plus"></div>
+                </div>
+                <div class="new_zealand__x">
+                    <div class="x__strip-1"></div>
+                    <div class="x__strip-2"></div>
+                </div>
+            </div>
+
+            <div class="new_zealand__star_wrap">
+                <div class="new_zealand__star"></div>
+            </div>
+            <div class="new_zealand__star_wrap">
+                <div class="new_zealand__star"></div>
+            </div>
+            <div class="new_zealand__star_wrap">
+                <div class="new_zealand__star"></div>
+            </div>
+            <div class="new_zealand__star_wrap">
+                <div class="new_zealand__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nicaragua's Flag -->
+    <div class="container" data-name="#127 - Nicaragua">
+        <div class="flag nicaragua">
+            <img src="https://imgur.com/ZG3uDN5.png" height="60" alt="" />
+        </div>
+    </div>
+
+    <!-- Niger's Flag -->
+    <div class="container" data-name="#128 - Niger">
+        <div class="flag niger"></div>
+    </div>
+
+    <!-- Nigeria's Flag -->
+    <div class="container" data-name="#129 - Nigeria">
+        <div class="flag nigeria"></div>
+    </div>
+
+    <!-- North Macedonia's Flag -->
+    <div class="container" data-name="#130 - North Macedonia">
+        <div class="flag north_macedonia">
+            <div class="left_shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+
+            <div class="top__shape"></div>
+            <div class="bottom__shape"></div>
+        </div>
+    </div>
+
+    <!-- Norway's Flag -->
+    <div class="container" data-name="#131 - Norway">
+        <div class="flag norway"></div>
+    </div>
+
+    <!-- Oman's Flag -->
+    <div class="container" data-name="#132 - Oman">
+        <div class="flag oman">
+            <img src="https://imgur.com/4HNw5LA.png" height="43" alt="" />
+        </div>
+    </div>
+
+    <!-- Pakistan's Flag -->
+    <div class="container" data-name="#133 - Pakistan">
+        <div class="flag pakistan"></div>
+    </div>
+
+    <!-- Palau's Flag -->
+    <div class="container" data-name="#134 - Palau">
+        <div class="flag palau"></div>
+    </div>
+
+    <!-- Palestine's Flag -->
+    <div class="container" data-name="#135 - Palestine">
+        <div class="flag palestine"></div>
+    </div>
+
+    <!-- Panama's Flag -->
+    <div class="container" data-name="#136 - Panama">
+        <div class="flag panama">
+            <div>
+                <div style="background-color: #011e56" class="panama__star"></div>
+            </div>
+            <div style="background-color: #dc0a13"></div>
+            <div style="background-color: #011e56"></div>
+            <div>
+                <div style="background-color: #dc0a13" class="panama__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Papua New Guinea's Flag -->
+    <div class="container" data-name="#137 - Papua New Guinea">
+        <div class="flag papua_new_guinea">
+            <div class="papua_new_guinea__stars">
+                <div class="papua_new_guinea__star"></div>
+                <div class="stars__row">
+                    <div class="papua_new_guinea__star"></div>
+                    <div class="papua_new_guinea__star"></div>
+                </div>
+                <div class="papua_new_guinea__star"></div>
+            </div>
+
+            <div class="absolute_star"></div>
+
+            <img src="https://imgur.com/GKqZvL4.png" height="100" alt="" />
+        </div>
+    </div>
+
+    <!-- Paraguay's Flag -->
+    <div class="container" data-name="#138 - Paraguay">
+        <div class="flag paraguay">
+            <img src="https://imgur.com/gFEaW9T.png" width="50" alt="" />
+        </div>
+    </div>
+
+    <!-- Peru's Flag -->
+    <div class="container" data-name="#139 - Peru">
+        <div class="flag peru"></div>
+    </div>
+
+    <!-- Philippines's Flag -->
+    <div class="container" data-name="#140 - Philippines">
+        <div class="flag philippines">
+            <div class="philippines__star"></div>
+            <div class="philippines__star"></div>
+            <div class="philippines__star"></div>
+            <img src="https://imgur.com/n4LM8Lv.png" height="120" alt="" />
+        </div>
+    </div>
+
+    <!-- Poland's Flag -->
+    <div class="container" data-name="#141 - Poland">
+        <div class="flag poland"></div>
+    </div>
+
+    <!-- Portugal's Flag -->
+    <div class="container" data-name="#142 - Portugal">
+        <div class="flag portugal">
+            <img src="https://imgur.com/FSGI62t.png" height="100" alt="" />
+        </div>
+    </div>
+    <!-- Qatar's Flag -->
+    <div class="container" data-name="#143 - Qatar">
+        <div class="flag qatar">
+            <div class="qatar_wrap">
+                <div class="qatar__triangle"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Romania's Flag -->
+    <div class="container" data-name="#144 - Romania">
+        <div class="flag romania"></div>
+    </div>
+
+    <!-- Russia's Flag -->
+    <div class="container" data-name="#145 - Russia">
+        <div class="flag russia"></div>
+    </div>
+
+    <!-- Rwanda's Flag -->
+    <div class="container" data-name="#146 - Rwanda">
+        <div class="flag rwanda">
+            <img src="https://imgur.com/7CyAWDb.png" height="64" alt="" />
+        </div>
+    </div>
+
+    <!-- Saint Kitts and Nevis's Flag -->
+    <div class="container" data-name="#147 - Saint Kitts and Nevis">
+        <div class="flag saint_kitts_and_nevis">
+            <div class="saint_kitts_and_nevis__black_strip">
+                <div class="saint_kitts_and_nevis__star"></div>
+                <div class="saint_kitts_and_nevis__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saint Lucia's Flag -->
+    <div class="container" data-name="#148 - Saint Lucia">
+        <div class="flag saint_lucia">
+            <div class="saint_lucia__outer_triangle"></div>
+        </div>
+    </div>
+
+    <!-- Saint Vincent and the Grenadines's Flag -->
+    <div class="container" data-name="#149 - Saint Vincent and the Grenadines">
+        <div class="flag saint_vincent_and_the_grenadines">
+            <div class="saint_vincent_and_the_grenadines__diamond"></div>
+            <div class="saint_vincent_and_the_grenadines__hidden_diamond"></div>
+        </div>
+    </div>
+
+    <!-- Samoa's Flag -->
+    <div class="container" data-name="#150 - Samoa">
+        <div class="flag samoa">
+            <div class="samoa__blue_box">
+                <div class="samoa__star"></div>
+                <div class="samoa_two_stars">
+                    <div class="samoa__star"></div>
+                    <div class="samoa__star"></div>
+                </div>
+                <div class="samoa__star"></div>
+
+                <div class="samoa__absolute_star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- San Marino's Flag -->
+    <div class="container" data-name="#151 - San Marino">
+        <div class="flag san_marino">
+            <img src="https://imgur.com/KzCUHSF.png" width="111" alt="" />
+        </div>
+    </div>
+
+    <!-- São Tomé's Flag -->
+    <div class="container" data-name="#152 - São Tomé">
+        <div class="flag são_tomé">
+            <div class="são_tomé__center">
+                <div class="são_tomé__star"></div>
+                <div class="são_tomé__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saudi Arabia's Flag -->
+    <div class="container" data-name="#153 - Saudi Arabia">
+        <div class="flag saudi_arabia">
+            <img src="https://imgur.com/1G6cv4X.png" height="100" alt="" />
+        </div>
+    </div>
+
+    <!-- Senegal's Flag -->
+    <div class="container" data-name="#154 - Senegal">
+        <div class="flag senegal"></div>
+    </div>
+
+    <!-- Serbia's Flag -->
+    <div class="container" data-name="#155 - Serbia">
+        <div class="flag serbia">
+            <img src="https://imgur.com/7PtlQSE.png" width="75" alt="" />
+        </div>
+    </div>
+
+    <!-- Seychelles's Flag -->
+    <div class="container" data-name="#156 - Seychelles">
+        <div class="flag seychelles"></div>
+    </div>
+
+    <!-- Sierra Leone's Flag -->
+    <div class="container" data-name="#157 - Sierra Leone">
+        <div class="flag sierra_leone"></div>
+    </div>
+
+    <!-- Singapore's Flag -->
+    <div class="container" data-name="#158 - Singapore">
+        <div class="flag singapore">
+            <div class="singapore__moon">
+                <div class="singapore__star"></div>
+                <div class="singapore__middle_stars">
+                    <div class="singapore__star"></div>
+                    <div class="singapore__star"></div>
+                </div>
+                <div class="singapore__bottom_stars">
+                    <div class="singapore__star"></div>
+                    <div class="singapore__star"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slovakia's Flag -->
+    <div class="container" data-name="#159 - Slovakia">
+        <div class="flag slovakia">
+            <img src="https://imgur.com/JZWJjrF.png" width="85" alt="" />
+        </div>
+    </div>
+
+    <!-- Slovenia's Flag -->
+    <div class="container" data-name="#160 - Slovenia">
+        <div class="flag slovenia">
+            <img src="https://imgur.com/ZDBGTBj.png" width="52" alt="" />
+        </div>
+    </div>
+
+    <!-- Solomon Islands's Flag -->
+    <div class="container" data-name="#161 - Solomon Islands">
+        <div class="flag solomon_islands">
+            <div class="solomon_islands__stars">
+                <div class="solomon_islands__group_stars">
+                    <div class="solomon_islands__star"></div>
+                    <div class="solomon_islands__star"></div>
+                </div>
+                <div style="margin: -6px 0" class="solomon_islands__star"></div>
+                <div class="solomon_islands__group_stars">
+                    <div class="solomon_islands__star"></div>
+                    <div class="solomon_islands__star"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Somalia's Flag -->
+    <div class="container" data-name="#162 - Somalia">
+        <div class="flag somalia"></div>
+    </div>
+
+    <!-- South Africa's Flag -->
+    <div class="container" data-name="#163 - South Africa">
+        <div class="flag south_africa">
+            <div class="south_africa__bottom_bg_shape"></div>
+            <div class="south_africa__bottom_shape"></div>
+
+            <div class="south_africa__top_bg_shape"></div>
+            <div class="south_africa__top_shape"></div>
+        </div>
+    </div>
+
+    <!-- South Sudan's Flag -->
+    <div class="container" data-name="#164 - South Sudan">
+        <div class="flag south_sudan">
+            <div class="south_sudan__star"></div>
+        </div>
+    </div>
+
+    <!-- Spain's Flag -->
+    <div class="container" data-name="#165 - Spain">
+        <div class="flag spain">
+            <img src="https://imgur.com/g1E7616.png" width="73" alt="" />
+        </div>
+    </div>
+
+    <!-- Sri Lanka's Flag -->
+    <div class="container" data-name="#166 - Sri Lanka">
+        <div class="flag sri_lanka">
+            <div class="left__box"></div>
+            <img src="https://imgur.com/lqpXtLJ.png" class="sri_lanka__logo" alt="" />
+        </div>
+    </div>
+
+    <!-- Sudan's Flag -->
+    <div class="container" data-name="#167 - Sudan">
+        <div class="flag sudan"></div>
+    </div>
+
+    <!-- Suriname's Flag -->
+    <div class="container" data-name="#168 - Suriname">
+        <div class="flag suriname"></div>
+    </div>
+
+    <!-- Sweden's Flag -->
+    <div class="container" data-name="#169 - Sweden">
+        <div class="flag sweden"></div>
+    </div>
+
+    <!-- Switzerland's Flag -->
+    <div class="container" data-name="#170 - Switzerland">
+        <div class="flag switzerland"></div>
+    </div>
+
+    <!-- Syria's Flag -->
+    <div class="container" data-name="#171 - Syria">
+        <div class="flag syria">
+            <div class="syria__stars_wrapper">
+                <div class="syria__star"></div>
+                <div class="syria__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tajikistan's Flag -->
+    <div class="container" data-name="#172 - Tajikistan">
+        <div class="flag tajikistan">
+            <img src="https://imgur.com/DHLTd3M.png" height="75" alt="" />
+        </div>
+    </div>
+
+    <!-- Tanzania's Flag -->
+    <div class="container" data-name="#173 - Tanzania">
+        <div class="flag tanzania"></div>
+    </div>
+
+    <!-- Thailand's Flag -->
+    <div class="container" data-name="#174 - Thailand">
+        <div class="flag thailand"></div>
+    </div>
+
+    <!-- Togo's Flag -->
+    <div class="container" data-name="#175 - Togo">
+        <div class="flag togo">
+            <div class="togo__red_box">
+                <div class="togo__star"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tonga's Flag -->
+    <div class="container" data-name="#176 - Tonga">
+        <div class="flag tonga">
+            <div class="tonga__white_box">
+                <div class="tonga__plus"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trinidad and Tobago's Flag -->
+    <div class="container" data-name="#177 - Trinidad and Tobago">
+        <div class="flag trinidad_and_tobago"></div>
+    </div>
+
+    <!-- Tunisia's Flag -->
+    <div class="container" data-name="#178 - Tunisia">
+        <div class="flag tunisia"></div>
+    </div>
+
+    <!-- Turkey's Flag -->
+    <div class="container" data-name="#179 - Turkey">
+        <div class="flag turkey"></div>
+    </div>
+
+    <!-- Turkmenistan's Flag -->
+    <div class="container" data-name="#180 - Turkmenistan">
+        <div class="flag turkmenistan">
+            <div class="turkmenistan__vertical__stars">
+                <div class="turkmenistan__star"></div>
+                <div class="turkmenistan__star"></div>
+                <div class="turkmenistan__star"></div>
+            </div>
+            <div class="turkmenistan__star left_star"></div>
+            <div class="turkmenistan__star right_star"></div>
+
+            <img style="margin-left: 36px" src="https://imgur.com/2MoKRjD.png" width="54" alt="" />
+        </div>
+    </div>
+
+    <!-- Tuvalu's Flag -->
+    <div class="container" data-name="#181 - Tuvalu">
+        <div class="flag tuvalu">
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+            <div class="tuvalu__star"></div>
+
+            <div class="tuvalu__left__top">
+                <div class="tuvalu__plus">
+                    <div class="plus"></div>
+                </div>
+                <div class="tuvalu__x">
+                    <div class="x__strip-1"></div>
+                    <div class="x__strip-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uganda's Flag -->
+    <div class="container" data-name="#182 - Uganda">
+        <div class="flag uganda">
+            <img src="https://imgur.com/FVFkkOQ.png" width="62" alt="" />
+        </div>
+    </div>
+    <!-- Ukraine's Flag -->
+    <div class="container" data-name="#183 - Ukraine">
+        <div class="flag ukraine"></div>
+    </div>
+    <!-- United Arab Emirates's Flag -->
+    <div class="container" data-name="#184 - United Arab Emirates">
+        <div class="flag united_arab_emirates"></div>
+    </div>
+
+    <!-- United Kingdom's Flag -->
+    <div class="container" data-name="#185 - United Kingdom">
+        <div class="flag united_kingdom">
+            <div class="united_kingdom__plus">
+                <div class="plus"></div>
+            </div>
+            <div class="united_kingdom__x">
+                <div class="x__strip-1"></div>
+                <div class="x__strip-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- United States's Flag -->
+    <div class="container" data-name="#186 United States">
+        <div class="flag united_states">
+            <div class="united_states__top_left">
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+                <div class="united_states__stars_col">
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                    <div class="united_states__star"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ukraine's Flag -->
+    <div class="container" data-name="#187 - Uruguay">
+        <div class="flag uruguay">
+            <div class="uruguay__top_left">
+                <img src="https://imgur.com/6XuYyDE.png" width="82" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Uzbekistan's Flag -->
+    <div class="container" data-name="#188 - Uzbekistan">
+        <div class="flag uzbekistan">
+            <div class="uzbekistan__star_wrap">
+                <div class="uzbekistan__star_col">
+                    <div class="uzbekistan__star"></div>
+                </div>
+                <div class="uzbekistan__star_col">
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                </div>
+                <div class="uzbekistan__star_col">
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                </div>
+                <div class="uzbekistan__star_col">
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                </div>
+                <div class="uzbekistan__star_col">
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                    <div class="uzbekistan__star"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanuatu's Flag -->
+    <div class="container" data-name="#189 - Vanuatu">
+        <div class="flag vanuatu">
+            <div class="vanuatu__black_triangle"></div>
+            <img src="https://imgur.com/rRUSzNt.png" height="54" alt="" />
+            <div class="vanuatu__center_strip"></div>
+        </div>
+    </div>
+
+    <!-- Vatican City's Flag -->
+    <div class="container" data-name="#190 - Vatican City">
+        <div class="flag vatican_city">
+            <img src="https://imgur.com/aqTYrky.png" width="55" alt="" />
+        </div>
+    </div>
+
+    <!-- Venezuela's Flag -->
+    <div class="container" data-name="#191 - Venezuela">
+        <div class="flag venezuela">
+            <img style="margin-top: -10px" src="https://imgur.com/po6bqAI.png" height="85" alt="" />
+        </div>
+    </div>
+
+    <!-- Vietnam's Flag -->
+    <div class="container" data-name="#192 - Vietnam">
+        <div class="flag vietnam"></div>
+    </div>
+
+    <!-- Yemen's Flag -->
+    <div class="container" data-name="#193 - Yemen">
+        <div class="flag yemen"></div>
+    </div>
+
+    <!-- Zambia's Flag -->
+    <div class="container" data-name="#194 - Zambia">
+        <div class="flag zambia">
+            <img src="https://imgur.com/4NOp6BT.png" height="37" alt="" />
+        </div>
+    </div>
+
+    <!-- Zimbabwe's Flag -->
+    <div class="container" data-name="#195 - Zimbabwe">
+        <div class="flag zimbabwe">
+            <img src="https://imgur.com/whSeEZu.png" height="60" alt="" />
+        </div>
+    </div>
+
+    <!-- Taiwan's Flag -->
+    <div class="container" data-name="#196 - Taiwan">
+
+        <div class="flag taiwan">
+            <img style="margin: 12px 35px; position: absolute;" src="https://imgur.com/yF9XSvO.png" width="75" />
+        </div>
+
+    </div>
+
+    <!-- End -->
+
+
+</body>
+</html>

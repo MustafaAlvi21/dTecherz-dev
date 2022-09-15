@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    myId = ""
+    console.log(window.location);
+    const params = new URLSearchParams(window.location.search)
+    console.log(params);
+    console.log("-------------22222222");
+    for (const param of params) {
+        console.log(param)
+        if(param[0] == "name") myId = param[0]
+
+    }
+
+    console.log("myId", myId);
+</script>
+
+<!-- api.com/user?name=ali&id=123 -->
+
+</html>

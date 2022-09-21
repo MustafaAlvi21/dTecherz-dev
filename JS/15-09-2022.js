@@ -49,3 +49,21 @@ const myCat  = new Cat(4, "pet", "Tom", "blue")
 myCat.getData()
 
 
+
+
+// TASK
+make a scientific calculator using class pattren and add the following features.
+    => add
+    => sub
+    => mul
+    => div
+    => round
+    => toFixed
+    => toFixed
+    => square (power of 2)
+    => cube (power of 3)
+    => square root
+    => cube root
+    => exponent (e4 ya 10*2)
+    => PI
+    => sepcial one -> print table of any number based on parameter

@@ -196,4 +196,4 @@ function deductQTY(qty, price) {
 }
 
 console.log("before data", data);
-withdraw(4650)
+withdraw(10350)

@@ -76,4 +76,4 @@ function amount_breakup(amount) {
     return [a5000, a1000, a500, a100, a50]
 }
 
-withdraw(5000)
+withdraw(5350)

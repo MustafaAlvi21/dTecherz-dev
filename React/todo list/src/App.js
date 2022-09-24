@@ -4,31 +4,28 @@ import { useState } from "react"
 import icon1 from "./assets/ico1.PNG"
 import icon2 from "./assets/ico2.PNG"
 
+// Components
+import About from "./components/about"
+import Tasklist from "./components/taskList"
 
 function App() {
 
-  const [allTask, setAllTask] = useState([])
-  const [task, setTask] = useState("")
 
-  function addNewTask() {
-    // const myArray = allTask
-    // myArray.push({
-    //   task,
-    //   status: false
-    // })
-    // or 
-    setAllTask(Ali => [...Ali, { task, status: false }])
-  }
 
-  function updateStatus(i, newStatus) {
-    let myTaskList = allTask
-    myTaskList[i].status = newStatus
-    setAllTask(myTaskList)
+  const name = "Khan Sahab"
+
+  function msg() {
+    alert("Hi, how can I help you? ");
   }
 
 
   return (
     <div className="App">
+      
+      
+      {/* Component */}
+      <About username={name} des={"I'm a student"} />
+      
       <div className="container">
         <div className="row main px-2 py-3">
           <header className="row head">
@@ -76,31 +73,12 @@ function App() {
             <h6 className="as12"> Today Tasks</h6>
           </div>
 
-          <div className="taskSection">
+          {/* TASK LIST COMPONENT */}
+          <Tasklist />
 
-            {
-              allTask.length > 0 && allTask.map((myTask, i) => {
-                return (
-                  <div className="task" key={i}>
-                    <div className="icon">
-                      <input type="checkbox" defaultChecked={myTask.status}  onChange={() => updateStatus(i, !myTask.status) } />
-                    </div>
-                    <div className="text">
-                      <p> {myTask.task} </p>
-                    </div>
-                  </div>
-                )
-              })
-            }
-
-          </div>
         </div>
       </div>
 
-      {/* Input section */}
-      <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
-      <button onClick={() => addNewTask()}> Add Task </button>
-      <button onClick={() => console.log(allTask)}> Print all task </button>
 
     </div>
   );

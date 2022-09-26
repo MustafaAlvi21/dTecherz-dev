@@ -1,11 +1,11 @@
 
 // props is a object of values
 // function About(props) {
-function About( { username, des } ) {
+function About( { username, des, msg } ) {
     // console.log(props);
     return(
         <>
-            {/* <button onClick={() => msg() }> MSG BTN </button> */}
+            <button onClick={() => msg() }> MSG BTN </button>
             
             {/* <h1>I'm {props.username}</h1>
             <p>{props.des}</p> */}

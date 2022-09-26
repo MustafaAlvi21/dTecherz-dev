@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // img
 import icon1 from "./assets/ico1.PNG"
@@ -9,22 +9,31 @@ import About from "./components/about"
 import Tasklist from "./components/taskList"
 
 function App() {
-
-
-
+  const [a, setA] = useState("")
+  
+  function test() {
+    console.log("run");
+  }
+  
   const name = "Khan Sahab"
-
+  
   function msg() {
     alert("Hi, how can I help you? ");
+    setA(Date.now())
+    console.log(Date.now())
   }
+  
+  useEffect( () => {
+    test()
+
+  }, [a])  // useEffect is now dependent on stata "a" so useEffect will run when state "a" updates 
 
 
   return (
     <div className="App">
       
-      
       {/* Component */}
-      <About username={name} des={"I'm a student"} />
+      <About username={name} des={"I'm a student"} msg={msg} />
       
       <div className="container">
         <div className="row main px-2 py-3">

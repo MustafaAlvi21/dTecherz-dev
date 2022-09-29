@@ -1,0 +1,116 @@
+.banner {
+    background-image: url("http://aetherthemes.com/demo/visia/images/hero.jpg");
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bannerContent div h2 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.BannerBTN button {
+    padding: 15px 50px;
+    color: white;
+    background-color: transparent;
+}
+
+.BannerBTN button:nth-child(1) {
+    border: 1px solid white;
+}
+.BannerBTN button:nth-child(1):hover {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: background-color 0.3s linear;
+}
+
+.BannerBTN button:nth-child(2) {
+    border: none;
+}
+
+
+.services {
+    padding: 75px 250px;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+}
+.service-icon i {
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.asd7887 {
+    position: relative;
+}
+.jkhkj {
+    position: absolute;
+    z-index: 1;
+}
+.myHovor {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.myHovor:hover {
+    background-color: antiquewhite;
+    z-index: 10 !important;
+}
+
+.cardText {
+    position: absolute;
+    bottom: 0;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .banner {
+        background-image: url("http://aetherthemes.com/demo/visia/images/about.jpg");
+    }
+
+    .bannerContent div h2 {
+        font-size: 35px;
+    }
+
+    .BannerBTN button {
+        padding: 15px 35px;
+    }
+}
+
+@media only screen and (max-width: 580px) {}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
